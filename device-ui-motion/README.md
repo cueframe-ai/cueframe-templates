@@ -1,3 +1,10 @@
+> **Template:** [`template.cueframe`](./template.cueframe) is the one document
+> every CueFrame surface reads; its component is bundled from
+> [`components/device-ui-motion/src`](./components/device-ui-motion/src) with
+> `node tools/bundle.mjs device-ui-motion device-ui-motion`. Parameters: `model`
+> (image, required) and `screen` (image, optional) bound through the component's
+> asset slots. Draft until a render and poster exist.
+
 # Device UI Motion
 
 A 15.17-second editable glass-UI showcase: compose button, navbar selection, search,

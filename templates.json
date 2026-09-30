@@ -1,0 +1,160 @@
+{
+  "schemaVersion": 2,
+  "templates": [
+    {
+      "slug": "yosemite-peregrines",
+      "title": "Yosemite Peregrines",
+      "category": "Spoken stories",
+      "format": "16:9",
+      "duration": "10 seconds",
+      "render": "https://cueframe.ai/demo/yosemite-peregrines-phenomenal.mp4",
+      "poster": "https://cueframe.ai/showcase/yosemite-peregrines-phenomenal-poster.jpg",
+      "description": "A Yosemite ranger's awe lands with one restrained editorial title and word-timed captions.",
+      "transcriptExcerpt": "It’s just phenomenal how unbelievably fast they are when they’re in that perfect tuck or stoop, as biologists call it, in the dive.",
+      "details": [
+        "Subject-aware editorial title",
+        "Word-timed captions",
+        "Original spoken audio"
+      ],
+      "prompt": "Turn a strong 10-second talking-head quote into a cinematic landscape edit. Keep the speaker and any source lower-third fully visible, place one restrained title behind the subject, add accurate word-timed captions above the bottom safe area, preserve the original voice, and use my brand kit for the logo and caption accents.",
+      "template": "https://github.com/cueframe-ai/cueframe-templates/tree/main/yosemite-peregrines",
+      "projectTemplate": "https://raw.githubusercontent.com/cueframe-ai/cueframe-templates/main/yosemite-peregrines/template.cueframe",
+      "original": {
+        "label": "National Park Service: Peregrine Falcons in Yosemite",
+        "href": "https://www.nps.gov/media/video/view.htm?id=53135a56-4998-4d6e-b26d-24fe0acca1c3"
+      },
+      "parameters": [
+        {
+          "name": "source",
+          "type": "media",
+          "required": true,
+          "kind": "video",
+          "label": "Peregrine Falcons in Yosemite, the full NPS master"
+        }
+      ],
+      "presets": []
+    },
+    {
+      "slug": "yosemite-warp-text",
+      "title": "Carved by water",
+      "category": "Motion design",
+      "format": "16:9",
+      "duration": "8 seconds",
+      "render": "https://cueframe.ai/demo/yosemite-warp-text.mp4",
+      "poster": "https://cueframe.ai/showcase/yosemite-poster.jpg",
+      "description": "An oversized moving title meets the scale of Yosemite Falls.",
+      "transcriptExcerpt": null,
+      "details": [
+        "Custom animated typography",
+        "Cinematic color",
+        "Ambient sound"
+      ],
+      "prompt": "Make an 8-second landscape film using waterfall footage. Use oversized amber typography reading “Carved by water”, a restrained cinematic grade, and natural ambient sound. Keep the title, footage, and sound independently editable. Use my footage if I supply it; otherwise help me find suitable licensed footage.",
+      "template": "https://github.com/cueframe-ai/cueframe-templates/tree/main/yosemite-warp-text",
+      "projectTemplate": "https://raw.githubusercontent.com/cueframe-ai/cueframe-templates/main/yosemite-warp-text/template.cueframe",
+      "original": {
+        "label": "Yosemite Upper Falls, CueFrame archive footage; title shader ported from React Bits WarpText (MIT)",
+        "href": "https://github.com/DavidHDev/react-bits"
+      },
+      "parameters": [
+        {
+          "name": "source",
+          "type": "media",
+          "required": true,
+          "kind": "video",
+          "label": "Waterfall footage"
+        },
+        {
+          "name": "text",
+          "type": "string",
+          "required": true,
+          "label": "Title"
+        },
+        {
+          "name": "color",
+          "type": "color",
+          "required": true,
+          "label": "Title color"
+        }
+      ],
+      "presets": [
+        {
+          "name": "carved",
+          "label": "Carved by water",
+          "poster": "https://cueframe.ai/showcase/yosemite-poster.jpg",
+          "render": "https://cueframe.ai/demo/yosemite-warp-text.mp4",
+          "description": "Amber over the falls, the published film."
+        },
+        {
+          "name": "granite",
+          "label": "Cut from granite",
+          "description": "Pale stone greys over the same footage.",
+          "brandKit": "template:yosemite-warp-text:granite"
+        }
+      ]
+    }
+  ],
+  "brandKits": [
+    {
+      "kitId": "template:yosemite-peregrines",
+      "name": "CueFrame OSS demo",
+      "fromTemplate": "yosemite-peregrines",
+      "colors": {
+        "primary": "#f7c948",
+        "secondary": "#eba61f",
+        "accent": "#f7c948",
+        "background": "#14100c",
+        "text": "#f4ece0"
+      },
+      "headingFont": {
+        "fontFamily": "Instrument Serif",
+        "fontWeight": 400
+      },
+      "bodyFont": {
+        "fontFamily": "Inter",
+        "fontWeight": 500
+      }
+    },
+    {
+      "kitId": "template:yosemite-warp-text",
+      "name": "Carved by water",
+      "fromTemplate": "yosemite-warp-text",
+      "colors": {
+        "primary": "#eba61f",
+        "secondary": "#f7f1e6",
+        "accent": "#eba61f",
+        "background": "#0a0a0a",
+        "text": "#f7f1e6"
+      },
+      "headingFont": {
+        "fontFamily": "Bricolage Grotesque",
+        "fontWeight": 650
+      },
+      "bodyFont": {
+        "fontFamily": "Inter",
+        "fontWeight": 500
+      }
+    },
+    {
+      "kitId": "template:yosemite-warp-text:granite",
+      "name": "Cut from granite",
+      "fromTemplate": "yosemite-warp-text",
+      "fromPreset": "granite",
+      "colors": {
+        "primary": "#d9dde3",
+        "secondary": "#2b2f36",
+        "accent": "#d9dde3",
+        "background": "#0b0d10",
+        "text": "#eef1f4"
+      },
+      "headingFont": {
+        "fontFamily": "Bricolage Grotesque",
+        "fontWeight": 650
+      },
+      "bodyFont": {
+        "fontFamily": "Inter",
+        "fontWeight": 500
+      }
+    }
+  ]
+}

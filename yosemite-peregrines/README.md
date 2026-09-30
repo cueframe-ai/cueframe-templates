@@ -1,3 +1,9 @@
+> **Template:** [`template.cueframe`](./template.cueframe) is the one document
+> every CueFrame surface reads. Its `source` parameter names the full NPS master
+> as its sample (sha-pinned on cdn) and carries the prepared matte by URL; the
+> matte attaches only to that exact file. The sections below describe the older
+> recipe files, kept until the cutover.
+
 # Yosemite Peregrines subject-aware title sample
 
 This editable sample turns one continuous Yosemite ranger clip into a cinematic
