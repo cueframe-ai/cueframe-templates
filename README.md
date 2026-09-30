@@ -19,7 +19,6 @@ repository but not in the catalog.
 | [`yosemite-warp-text`](./yosemite-warp-text) | Oversized WebGL typography over waterfall footage; presets `carved` and `granite` | published |
 | [`yosemite-peregrines`](./yosemite-peregrines) | A ranger's talking-head beat with a behind-subject title and word-timed captions | published |
 | [`device-ui-motion`](./device-ui-motion) | A glass-UI showcase on a baked phone mesh | draft |
-| [`clay-outbound-v1`](./clay-outbound-v1) | Four card beats for one prospect from a table row | draft |
 
 Samples and prepared mattes live on `cdn.cueframe.ai`, pinned by sha256 in
 each document; nothing binary is committed here.
