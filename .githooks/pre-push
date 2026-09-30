@@ -1,0 +1,3 @@
+#!/bin/sh
+# Every push validates the documents and the catalog; `npm run setup` installs this hook.
+exec node "$(dirname "$0")/../tools/validate.mjs" "$@"

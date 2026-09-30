@@ -1,0 +1,18 @@
+{
+  "name": "@cueframe/templates",
+  "private": true,
+  "type": "module",
+  "license": "AGPL-3.0-only",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "setup": "git config core.hooksPath .githooks",
+    "test": "node --test tools/*.test.mjs",
+    "validate": "node tools/validate.mjs",
+    "catalog": "node tools/catalog.mjs",
+    "bundle": "node tools/bundle.mjs"
+  },
+  "devDependencies": {
+    "@cueframe/kernel": "0.2.60",
+    "esbuild": "0.25.12"
+  }
+}
