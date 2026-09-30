@@ -1,0 +1,344 @@
+{
+  "v": 1,
+  "slug": "yosemite-peregrines",
+  "name": "Yosemite Peregrines",
+  "description": "A Yosemite ranger's awe lands with one restrained editorial title and word-timed captions.",
+  "composition": {
+    "v": 1,
+    "format": {
+      "aspectRatio": "16:9",
+      "fps": 30,
+      "resolution": "fhd"
+    },
+    "markers": [
+      {
+        "id": "scene-start",
+        "kind": "scene",
+        "startTime": 0
+      }
+    ],
+    "tracks": [
+      {
+        "id": "track-depth-title",
+        "kind": "overlay",
+        "name": "Phenomenal — behind subject",
+        "contents": [
+          {
+            "id": "peregrines-phenomenal-title",
+            "kind": "overlay",
+            "startTime": 1.2,
+            "duration": 2.75,
+            "position": {
+              "x": 0.5,
+              "y": 0.56
+            },
+            "source": {
+              "kind": "overlay",
+              "primitiveId": "heroText",
+              "params": {
+                "text": "PHENOMENAL",
+                "fontSizePct": 27,
+                "fontWeight": 400,
+                "textColor": "$brand:colors.accent",
+                "fontFamily": "$brand:fonts.heading.family",
+                "entrance": "stagger-up",
+                "durationMs": 320,
+                "easing": "ease-out",
+                "revealAtMs": [
+                  0
+                ]
+              },
+              "zPlane": "behind-subject"
+            }
+          }
+        ]
+      },
+      {
+        "id": "track-video",
+        "kind": "video",
+        "name": "Yosemite ranger — source",
+        "contents": [
+          {
+            "id": "peregrines-source",
+            "kind": "video",
+            "startTime": 0,
+            "duration": 9.743,
+            "source": {
+              "kind": "media",
+              "mediaId": "{{source}}",
+              "trim": {
+                "start": 83.616,
+                "end": 93.359
+              },
+              "muted": false,
+              "volumeDb": -2,
+              "fadeInMs": 120,
+              "fadeOutMs": 280,
+              "audioRole": "vo",
+              "reframe": {
+                "segments": [
+                  {
+                    "startSec": 0,
+                    "endSec": 9.743,
+                    "focus": {
+                      "mode": "frame-center"
+                    },
+                    "zoom": 1,
+                    "intent": "Preserve the complete 16:9 ranger portrait and original NPS lower-third."
+                  }
+                ]
+              }
+            },
+            "effects": [
+              {
+                "primitiveId": "color-grade",
+                "params": {
+                  "preset": "cinematic",
+                  "temperature": 3,
+                  "intensity": 0.48
+                }
+              },
+              {
+                "primitiveId": "vignette",
+                "params": {
+                  "intensity": 0.12
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "captions": {
+      "source": "authored",
+      "segments": [
+        {
+          "words": [
+            {
+              "text": "It's",
+              "startMs": 369,
+              "endMs": 849
+            },
+            {
+              "text": "just",
+              "startMs": 849,
+              "endMs": 1089
+            },
+            {
+              "text": "phenomenal",
+              "startMs": 1304,
+              "endMs": 2024,
+              "emphasis": true
+            },
+            {
+              "text": "how",
+              "startMs": 2024,
+              "endMs": 2584
+            },
+            {
+              "text": "unbelievably",
+              "startMs": 2584,
+              "endMs": 3224
+            },
+            {
+              "text": "fast",
+              "startMs": 3224,
+              "endMs": 3544,
+              "emphasis": true
+            },
+            {
+              "text": "they",
+              "startMs": 3544,
+              "endMs": 3704
+            },
+            {
+              "text": "are",
+              "startMs": 3704,
+              "endMs": 3864
+            },
+            {
+              "text": "when",
+              "startMs": 3864,
+              "endMs": 4024
+            },
+            {
+              "text": "they're",
+              "startMs": 4024,
+              "endMs": 4184
+            },
+            {
+              "text": "in",
+              "startMs": 4184,
+              "endMs": 4344
+            },
+            {
+              "text": "that",
+              "startMs": 4344,
+              "endMs": 4744
+            },
+            {
+              "text": "perfect,",
+              "startMs": 4744,
+              "endMs": 5544
+            },
+            {
+              "text": "tuck",
+              "startMs": 6424,
+              "endMs": 6744
+            },
+            {
+              "text": "or",
+              "startMs": 6744,
+              "endMs": 6904
+            },
+            {
+              "text": "stoop",
+              "startMs": 6904,
+              "endMs": 7384
+            },
+            {
+              "text": "as",
+              "startMs": 7384,
+              "endMs": 7624
+            },
+            {
+              "text": "biologists",
+              "startMs": 7624,
+              "endMs": 8344
+            },
+            {
+              "text": "call",
+              "startMs": 8344,
+              "endMs": 8504
+            },
+            {
+              "text": "it",
+              "startMs": 8504,
+              "endMs": 8584
+            },
+            {
+              "text": "in",
+              "startMs": 8584,
+              "endMs": 8744
+            },
+            {
+              "text": "the",
+              "startMs": 8744,
+              "endMs": 8904
+            },
+            {
+              "text": "dive.",
+              "startMs": 8904,
+              "endMs": 9544
+            }
+          ]
+        }
+      ],
+      "style": {
+        "fontFamily": "Inter",
+        "fontSize": 4.1,
+        "fontWeight": 500,
+        "color": "#f4ece0",
+        "emphasisColor": "#f7c948",
+        "plate": "glass",
+        "position": "bottom",
+        "maxWidthPercent": 72,
+        "entrance": "none",
+        "entranceMs": 160
+      }
+    }
+  },
+  "parameters": [
+    {
+      "name": "source",
+      "type": "media",
+      "kind": "video",
+      "required": true,
+      "label": "Peregrine Falcons in Yosemite, the full NPS master",
+      "sample": {
+        "url": "https://cdn.cueframe.ai/templates/yosemite-peregrines/peregrine-falcons-in-yosemite-1080p.mp4",
+        "sha256": "b84ebdee4f52f78e8b9771bfdaee1c0a41e8d3cfc8ffb8bc0ff68713482096ab",
+        "mimeType": "video/mp4",
+        "durationSec": 428.0276
+      },
+      "prepared": {
+        "mattes": {
+          "4aa54bdd6d0d": {
+            "url": "https://cdn.cueframe.ai/templates/yosemite-peregrines/4aa54bdd6d0d.mp4",
+            "sha256": "42fa0d95b11c7a45f618f942f35fe04717e6fed0f92f021ab55f72abe67d33fa",
+            "mimeType": "video/mp4",
+            "bakeVersion": "birefnet-portrait-coview-h264-v14-rvm-2026.08.27",
+            "presenceFraction": 0.9
+          }
+        }
+      }
+    }
+  ],
+  "components": {},
+  "brandKit": {
+    "kitId": "cueframe-recipes-demo",
+    "name": "CueFrame OSS demo",
+    "description": "CueFrame identity for public examples without automatic bookends.",
+    "tagline": "One video substrate for humans and agents.",
+    "colors": {
+      "primary": "#f7c948",
+      "secondary": "#eba61f",
+      "accent": "#f7c948",
+      "background": "#14100c",
+      "text": "#f4ece0"
+    },
+    "headingFont": {
+      "fontFamily": "Instrument Serif",
+      "fontWeight": 400
+    },
+    "bodyFont": {
+      "fontFamily": "Inter",
+      "fontWeight": 500
+    },
+    "captionProfile": {
+      "fontFamily": "Inter",
+      "fontWeight": 500,
+      "color": "#f4ece0",
+      "highlightColor": "#f7c948",
+      "plate": "glass",
+      "position": "bottom",
+      "textTransform": "none",
+      "entrance": "none",
+      "entranceMs": 160
+    },
+    "motion": {
+      "entrance": "stagger-up",
+      "duration": 320,
+      "easing": "ease-out",
+      "staggerMs": 60,
+      "exitMs": 260
+    },
+    "logo": {
+      "src": "https://raw.githubusercontent.com/cueframe-ai/cueframe-templates/main/assets/cueframe-wordmark-on-dark.png",
+      "alt": "CueFrame",
+      "placement": "tr",
+      "sizePct": 16
+    }
+  },
+  "rubric": "# Yosemite Peregrines review rubric\n\nVision: a Yosemite ranger's awe at a peregrine's speed lands as one cinematic\ntalking-head moment. Speech, raised captions, grade, and one enormous depth title\nreinforce the same beat without sacrificing the ranger's expression.\n\n## Must-haves\n\n- At 0 and 1 seconds, the full hat and the source lower-third remain visible.\n- At 1.5 and 2.2 seconds, `PHENOMENAL` spans most of the frame behind the ranger;\n  his face and shoulders remain cleanly in front and both ends of the word stay\n  inside the frame.\n- At 3.4 seconds, the title and caption emphasis reinforce “fast” without\n  covering the ranger's face.\n- At 4.8, 6.5, 8.5, and 9.5 seconds, the raised captions remain separated from\n  the subject, source lower-third, and bottom edge.\n- The original spoken audio is clear throughout. No unrelated music or effects.\n- At 1.17–1.23 and 3.93–4.0 seconds, the ranger's motion stays continuous across\n  both depth-title boundaries; no frame jump, hold, or decode reset is visible.\n\n## Kill criteria\n\n- The title paints over the ranger instead of passing behind him, clips at the\n  frame edges, or collides with the source lower-third.\n- A border, title plate, duplicated cutout, blank card, or unrelated stock shot\n  appears.\n- Captions cover the ranger's mouth or eyes, flash before speech, or leave the\n  bottom safe area.\n- The edit clips the phrase or continues into the next topic after “dive.”\n- The source take is split to host the matte, or motion cadence breaks at either\n  edge of the depth-title window.\n\n## Acceptance gate\n\nPreview `0, 1, 1.17, 1.2, 1.23, 1.5, 2.2, 3.4, 3.93, 3.97, 4, 4.8, 6.5, 8.5,\n9.5` seconds, watch the `1.1-4.1` second title-motion window with audio, and\nrequire zero kill criteria before final export. The video track must contain\nexactly one clip, frame timestamps must remain monotonic, and neither title\nboundary may appear among the largest subject-region discontinuities. Run the\nsighted CueFrame score as an independent check, but review its spatial/caption\ncritique against the stated intent: the ranger interrupting the hero word is the\nplanned depth effect, while the bottom glass text is the caption layer.\n",
+  "provenance": {
+    "label": "National Park Service: Peregrine Falcons in Yosemite",
+    "href": "https://www.nps.gov/media/video/view.htm?id=53135a56-4998-4d6e-b26d-24fe0acca1c3",
+    "notes": "Public-domain NPS footage; the source credit stays with the film. The prepared matte is the silhouette of the 84.816 to 87.566 second window of this exact master."
+  },
+  "gallery": {
+    "status": "published",
+    "category": "Spoken stories",
+    "format": "16:9",
+    "duration": "10 seconds",
+    "render": "https://cueframe.ai/demo/yosemite-peregrines-phenomenal.mp4",
+    "poster": "https://cueframe.ai/showcase/yosemite-peregrines-phenomenal-poster.jpg",
+    "prompt": "Turn a strong 10-second talking-head quote into a cinematic landscape edit. Keep the speaker and any source lower-third fully visible, place one restrained title behind the subject, add accurate word-timed captions above the bottom safe area, preserve the original voice, and use my brand kit for the logo and caption accents.",
+    "details": [
+      "Subject-aware editorial title",
+      "Word-timed captions",
+      "Original spoken audio"
+    ],
+    "transcriptExcerpt": "It’s just phenomenal how unbelievably fast they are when they’re in that perfect tuck or stoop, as biologists call it, in the dive."
+  }
+}

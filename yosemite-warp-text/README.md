@@ -1,3 +1,9 @@
+> **Template:** [`template.cueframe`](./template.cueframe) is the one document
+> every CueFrame surface reads. Parameters: `source` (video, sample on cdn),
+> `text`, `color`. Presets: `carved` (amber, the published film) and `granite`
+> (pale stone greys with its own kit). The sections below describe the older
+> recipe files, kept until the cutover.
+
 # Yosemite WarpText sample
 
 This is the editable workspace behind the

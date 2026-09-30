@@ -1,75 +1,48 @@
 # Contributing
 
-Each recipe is a portable, editable CueFrame project that proves one recognizable
-video job end to end. Keep the source, documentation, and generated project
-together so a recipe can be understood without searching the repository.
-
-## 1. Create the recipe package
-
-Add a lowercase, kebab-case directory at the repository root. Recipe paths are
-public API: released CueFrame clients resolve slugs directly from these paths.
+A template is one document per directory, `<slug>/template.cueframe`, laid out:
 
 ```text
-my-recipe/
-├── README.md
-├── build-project-template.mjs
-├── composition.template.json
-└── recipe.cueframe
+my-template/
+├── template.cueframe          the document (kernel TemplateDocument, v: 1)
+├── README.md                  use case, reproduction, attribution
+└── components/<id>/src/       optional modular authoring source
 ```
 
-Keep recipe-specific components, brand kits, review rubrics, and other derived
-assets in that same directory. Do not commit source masters; contributors and
-users must bring media they have permission to edit.
+## 1. Author it in the app
 
-## 2. Document the workflow
+Make the project in the CueFrame desktop app, then save it as a template with
+`save_as_template` (the desktop's MCP tool) and check it with `check_template`,
+which applies the document to a scratch project with solid-colour probe media,
+renders sampled stills and reports whether every media parameter appears. A
+document written by hand must still pass `npm run validate`.
 
-The recipe README should explain:
+## 2. Components by value
 
-- the use case and who it is for;
-- the source attribution and exact reproduction steps;
-- how to run the recipe from the desktop app, CLI, and MCP;
-- the editable layers and important implementation choices; and
-- the finished render and, when appropriate, a review rubric with named
-  timestamps and kill criteria.
+A component travels inside the document under `components[id]` with its
+`source` (`tsxSource` and manifest), `name`, `description`, `category` and
+`propSchema`. Modular source goes under `components/<id>/src/`; bundle it into
+the document with `node tools/bundle.mjs <slug> <id> [entry]`.
 
-## 3. Build the portable project
+## 3. Media samples
 
-Use `build-project-template.mjs` to generate `recipe.cueframe` deterministically.
-The project must use CueFrame project version 4, declare its recipe slug, and
-provide at least one media slot whose `projectMediaId` exists in the project
-pool.
+A media parameter that a published template binds needs a `sample`: a public
+https file on `cdn.cueframe.ai`, pinned by `sha256`. Name the source and its
+license in the pull request; a maintainer re-hosts it. Never commit media.
 
-Run the builder from anywhere; it should resolve its inputs relative to its own
-recipe directory:
+## 4. Presets and the kit
+
+`presets` carry values for the non-media parameters and, optionally, a brand
+kit; media never rides a preset. The catalog writes the document kit as
+`template:<slug>` and each preset kit as `template:<slug>:<preset>`.
+
+## 5. Validate and submit
 
 ```bash
-node my-recipe/build-project-template.mjs
+npm install && npm run setup
+npm run validate
+npm run catalog   # regenerates templates.json
 ```
 
-## 4. Add the catalog and gallery entries
-
-Once the recipe has a hosted render and poster, add it to `recipes.json` at its
-intended gallery position; consumers use this order for display. Preserve the
-canonical top-level repository URLs:
-
-```text
-https://github.com/cueframe-ai/cueframe-recipes/tree/main/my-recipe
-https://raw.githubusercontent.com/cueframe-ai/cueframe-recipes/main/my-recipe/recipe.cueframe
-```
-
-Add a matching entry to the root README with a linked poster, a direct project
-download, a short description, and a link to the recipe package.
-
-If the package is ready for review but its hosted render or poster is not, list
-its slug and the reason in `draft-recipes.json` instead. A package must appear in
-exactly one of the published or draft catalogs.
-
-## 5. Validate the repository
-
-```bash
-node tools/validate-recipes.mjs
-```
-
-The validator checks lifecycle membership, landing-required metadata, package
-completeness, canonical URLs, project/media-slot integrity, and authored-component
-source hashes.
+The pre-push hook runs the validator. Open a pull request; merges land as
+`gallery.status: "draft"` until a render and poster exist.

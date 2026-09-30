@@ -1,68 +1,59 @@
-# CueFrame recipes
+# CueFrame templates
 
-Real, editable video projects that show what CueFrame is best at. Each recipe
-starts with real source material, includes its composition and component source,
-and explains the editorial decisions behind the finished render.
+Real, editable video templates that show what CueFrame is best at. Each
+template is ONE document, `<slug>/template.cueframe`: a frozen composition with
+`{{name}}` references, typed parameters, its components by value, a brand kit,
+presets, a review rubric, provenance and gallery metadata. The desktop app, the
+CLI, MCP and `/v1/templates` all read this same file; nothing here is
+reconstructed from prose.
 
-Each recipe package has a stable top-level path, previews link to the finished
-renders, and repository maintenance scripts live in [`tools/`](./tools). The
-machine-readable catalog is [`recipes.json`](./recipes.json).
+The machine-readable catalog is [`templates.json`](./templates.json)
+(`schemaVersion: 2`), generated from the published documents by
+`node tools/catalog.mjs`. Drafts (no hosted render and poster yet) are in the
+repository but not in the catalog.
 
-Packages awaiting a hosted preview are tracked separately in
-[`draft-recipes.json`](./draft-recipes.json) so landing-page consumers only see
-complete gallery entries.
+## Templates
 
-## Published recipes
+| Slug | What it is | Status |
+| --- | --- | --- |
+| [`yosemite-warp-text`](./yosemite-warp-text) | Oversized WebGL typography over waterfall footage; presets `carved` and `granite` | published |
+| [`yosemite-peregrines`](./yosemite-peregrines) | A ranger's talking-head beat with a behind-subject title and word-timed captions | published |
+| [`device-ui-motion`](./device-ui-motion) | A glass-UI showcase on a baked phone mesh | draft |
+| [`clay-outbound-v1`](./clay-outbound-v1) | Four card beats for one prospect from a table row | draft |
 
-### Yosemite Peregrines ([project download](https://raw.githubusercontent.com/cueframe-ai/cueframe-recipes/main/yosemite-peregrines/recipe.cueframe))
+Samples and prepared mattes live on `cdn.cueframe.ai`, pinned by sha256 in
+each document; nothing binary is committed here.
 
-[![A ranger in Yosemite with the word Phenomenal behind him](https://cueframe.ai/showcase/yosemite-peregrines-phenomenal-poster.jpg)](https://cueframe.ai/demo/yosemite-peregrines-phenomenal.mp4)
+## Use a template
 
-A subject-aware talking-head edit with an editorial title, word-timed captions,
-brand styling, and the original spoken audio. [Open the recipe](./yosemite-peregrines).
-
-### Yosemite WarpText ([project download](https://raw.githubusercontent.com/cueframe-ai/cueframe-recipes/main/yosemite-warp-text/recipe.cueframe))
-
-[![Yosemite Falls behind oversized amber typography](https://cueframe.ai/showcase/yosemite-poster.jpg)](https://cueframe.ai/demo/yosemite-warp-text.mp4)
-
-A landscape film with a reusable WebGL title component, cinematic color, and
-ambient sound. [Open the recipe](./yosemite-warp-text).
-
-## Draft recipes
-
-Draft packages are reviewable and downloadable, but are deliberately excluded
-from the public gallery catalog until their hosted render and poster exist.
-
-### Device UI Motion ([project download](https://raw.githubusercontent.com/cueframe-ai/cueframe-recipes/main/device-ui-motion/recipe.cueframe))
-
-An editable 3D glass-control showcase with a supplied phone mesh, product UI,
-and frame-driven camera choreography. [Open the recipe](./device-ui-motion).
-Bring your own model; a hosted video/poster has not been published yet.
-
-## Run a recipe
-
-Open a recipe's `recipe.cueframe` file in the desktop app and locate its source
-media when prompted, or run it by slug from the CLI:
-
-```bash
-npx -y cueframe recipe run yosemite-peregrines --media ./source.mp4
-```
-
-An MCP-connected agent resolves the same slug from this repository and applies
-the same project artifact. Recipe definitions do not live in the app, CLI, MCP
-server, or landing site.
-
-Every recipe documents its source attribution. Source masters are excluded;
-bring media you have permission to edit.
+- **Desktop app:** Home, "From template", pick the `template.cueframe`, fill
+  its parameters (or use the sample), Create. A template is only ever read.
+- **API:** `POST /v1/templates/<slug>/apply { projectId, values, media, preset? }`
+  binds it into a project; `POST /v1/templates/<slug>/renders` renders one row
+  with a share link. The public catalog is served at
+  `https://api.cueframe.ai/catalog/templates.json`.
+- **Agents:** `get_template` reads a template by reference, `apply_template`
+  applies it; the server installs the components, so no source passes through
+  the model.
+- **CLI:** `cueframe template run <slug> --media source=sample` (ships with the
+  next CLI release; until then the `recipe` commands read the older files).
 
 ## Contributing
 
-See [CONTRIBUTING.md](./CONTRIBUTING.md) for the recipe package layout and
-submission checklist. Validate the catalog, portable projects, canonical URLs,
-and media slots with:
+See [CONTRIBUTING.md](./CONTRIBUTING.md). Validate every document, bind every
+preset with its samples, and check the catalog with:
 
 ```bash
-node tools/validate-recipes.mjs
+npm install
+npm run setup     # installs the pre-push hook
+npm run validate
 ```
 
-Recipes are licensed under [AGPL-3.0-only](./LICENSE).
+## Until the cutover
+
+The older `recipe.cueframe`, `composition.template.json`, `recipes.json` and
+per-recipe builders stay beside the documents until every released reader has
+moved to templates; they are then deleted and the history rewritten to drop the
+embedded matte.
+
+Templates are licensed under [AGPL-3.0-only](./LICENSE).
