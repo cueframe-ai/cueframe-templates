@@ -53,7 +53,6 @@ npm run validate
 
 The older `recipe.cueframe`, `composition.template.json`, `recipes.json` and
 per-recipe builders stay beside the documents until every released reader has
-moved to templates; they are then deleted and the history rewritten to drop the
-embedded matte.
+moved to templates; they are then deleted.
 
 Templates are licensed under [AGPL-3.0-only](./LICENSE).
