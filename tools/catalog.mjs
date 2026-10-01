@@ -4,7 +4,8 @@
 // preset kit under the namespaced ids apply and render write
 // (`template:<slug>` and `template:<slug>:<preset>`), so two templates never
 // merge a kit. `node tools/catalog.mjs [root]` writes the file.
-import { readdir, readFile, writeFile } from 'node:fs/promises';
+import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises';
+import { createHash } from 'node:crypto';
 import { join, dirname, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { parseTemplateDocument } from '@cueframe/kernel/component-runtime/template';
@@ -13,10 +14,10 @@ export const CATALOG_FILE = 'templates.json';
 export const REPOSITORY = 'cueframe-ai/cueframe-templates';
 const TREE = `https://github.com/${REPOSITORY}/tree/main`;
 const RAW = `https://raw.githubusercontent.com/${REPOSITORY}/main`;
-const SKIPPED = new Set(['tools', 'assets', 'node_modules']);
+const SKIPPED = new Set(['tools', 'assets', 'artifacts', 'node_modules']);
 
 /** The catalog rows and kits for one parsed document; null for a draft. */
-export function catalogEntry(doc) {
+export function catalogEntry(doc, documentSha256) {
   const gallery = doc.gallery;
   if (gallery?.status !== 'published') return null;
   const presets = Object.entries(doc.presets ?? {}).map(([name, preset]) => ({
@@ -29,6 +30,7 @@ export function catalogEntry(doc) {
   }));
   const template = {
     slug: doc.slug,
+    documentSha256,
     title: doc.name,
     ...(gallery.category ? { category: gallery.category } : {}),
     ...(gallery.format ? { format: gallery.format } : {}),
@@ -40,7 +42,7 @@ export function catalogEntry(doc) {
     ...(gallery.details ? { details: gallery.details } : {}),
     ...(gallery.prompt ? { prompt: gallery.prompt } : {}),
     template: `${TREE}/${doc.slug}`,
-    projectTemplate: `${RAW}/${doc.slug}/template.cueframe`,
+    projectTemplate: `${RAW}/artifacts/${documentSha256}.cueframe`,
     ...(doc.provenance ? { original: { label: doc.provenance.label, ...(doc.provenance.href ? { href: doc.provenance.href } : {}) } } : {}),
     parameters: doc.parameters.map((p) => ({ name: p.name, type: p.type, required: p.required, ...(p.type === 'media' ? { kind: p.kind } : {}), ...(p.label ? { label: p.label } : {}) })),
     presets,
@@ -73,7 +75,7 @@ export async function render(root) {
       // The validator names it; the catalog carries only documents the kernel accepts.
       continue;
     }
-    const catalog = catalogEntry(doc);
+    const catalog = catalogEntry(doc, createHash('sha256').update(raw).digest('hex'));
     if (!catalog) continue;
     templates.push(catalog.template);
     brandKits.push(...catalog.brandKits);
@@ -81,8 +83,30 @@ export async function render(root) {
   return `${JSON.stringify({ schemaVersion: 2, templates, brandKits }, null, 2)}\n`;
 }
 
+/** Keep old content-addressed documents so an older catalog remains usable. */
+export async function materializeArtifacts(root, catalogText) {
+  const catalog = JSON.parse(catalogText);
+  const dir = join(root, 'artifacts');
+  await mkdir(dir, { recursive: true });
+  for (const row of catalog.templates) {
+    const source = await readFile(join(root, row.slug, 'template.cueframe'));
+    const actual = createHash('sha256').update(source).digest('hex');
+    if (actual !== row.documentSha256) throw new Error(`${row.slug} changed while catalog artifacts were generated`);
+    const destination = join(dir, `${actual}.cueframe`);
+    try {
+      const existing = await readFile(destination);
+      if (!existing.equals(source)) throw new Error(`Immutable artifact ${destination} has different bytes`);
+    } catch (error) {
+      if (error?.code !== 'ENOENT') throw error;
+      await writeFile(destination, source, { flag: 'wx' });
+    }
+  }
+}
+
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const root = resolve(process.argv[2] ?? dirname(dirname(fileURLToPath(import.meta.url))));
-  await writeFile(join(root, CATALOG_FILE), await render(root));
+  const catalog = await render(root);
+  await materializeArtifacts(root, catalog);
+  await writeFile(join(root, CATALOG_FILE), catalog);
   console.log(`wrote ${join(root, CATALOG_FILE)}`);
 }

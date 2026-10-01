@@ -14,7 +14,7 @@ import {
 } from '@cueframe/kernel/component-runtime/template';
 import { render as renderCatalog, CATALOG_FILE } from './catalog.mjs';
 
-export const SKIPPED_DIRS = new Set(['tools', 'assets', 'node_modules']);
+export const SKIPPED_DIRS = new Set(['tools', 'assets', 'artifacts', 'node_modules']);
 export const DOCUMENT_FILE = 'template.cueframe';
 /** A template document stays well under the 1 MiB wire cap so a clone stays small. */
 export const MAX_DOCUMENT_BYTES = 150 * 1024;
@@ -89,12 +89,21 @@ export async function validateRepo(root) {
     catalog = null;
   }
   const catalogFresh = catalog === expected;
-  return { results, catalogFresh };
+  const missingArtifacts = [];
+  for (const row of JSON.parse(expected).templates) {
+    try {
+      const bytes = await readFile(join(root, 'artifacts', `${row.documentSha256}.cueframe`), 'utf8');
+      if (bytes !== await readFile(join(root, row.slug, DOCUMENT_FILE), 'utf8')) missingArtifacts.push(row.slug);
+    } catch {
+      missingArtifacts.push(row.slug);
+    }
+  }
+  return { results, catalogFresh, missingArtifacts };
 }
 
 async function main() {
   const root = resolve(process.argv[2] ?? dirname(dirname(fileURLToPath(import.meta.url))));
-  const { results, catalogFresh } = await validateRepo(root);
+  const { results, catalogFresh, missingArtifacts } = await validateRepo(root);
   let failed = 0;
   for (const { dir, problems } of results) {
     if (problems.length === 0) {
@@ -108,6 +117,10 @@ async function main() {
   if (!catalogFresh) {
     failed++;
     console.error(`FAIL ${CATALOG_FILE} is stale; run node tools/catalog.mjs`);
+  }
+  for (const slug of missingArtifacts) {
+    failed++;
+    console.error(`FAIL immutable artifact for ${slug} is missing or changed; run node tools/catalog.mjs`);
   }
   if (results.length === 0) {
     failed++;

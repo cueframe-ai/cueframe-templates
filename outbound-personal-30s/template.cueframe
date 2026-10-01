@@ -1,0 +1,645 @@
+{
+  "v": 1,
+  "slug": "outbound-personal-30s",
+  "name": "A thirty-second film for one prospect",
+  "description": "A personal outbound film from one table row: their name, their pain, one proof number and the ask, in kinetic type over a moving espresso and amber ground, with a music bed and hits.",
+  "composition": {
+    "v": 1,
+    "format": {
+      "aspectRatio": "16:9",
+      "fps": 30,
+      "resolution": "fhd"
+    },
+    "tracks": [
+      {
+        "id": "textB",
+        "kind": "overlay",
+        "name": "Type B",
+        "contents": [
+          {
+            "id": "b2-hook",
+            "startTime": 3.9,
+            "duration": 6.0,
+            "source": {
+              "kind": "card",
+              "tokens": {
+                "ink": "#f4ece0",
+                "ink2": "#b8a98f",
+                "accent": "{{accent}}"
+              },
+              "html": "<style>.r{position:relative;width:1920px;height:1080px;box-sizing:border-box;overflow:hidden;color:var(--cf-ink);font-family:Inter,sans-serif;--x:clamp(0,calc((var(--cf-t) - 5.40) / .5),1)}.c{position:absolute;inset:0;padding:0 10%;display:flex;flex-direction:column;justify-content:center;transform-origin:var(--o,30% 50%);transform:scale(calc(1 + var(--cf-progress) * .05));opacity:calc(1 - var(--x));filter:blur(calc(var(--x) * 16px))}.i{--p:clamp(0,calc((var(--cf-t) - var(--d,0)) / var(--s,.8)),1);--e:calc(var(--p) * (2 - var(--p)));display:inline-block;opacity:var(--e);transform:translateY(calc((1 - var(--e)) * 60px));filter:blur(calc((1 - var(--e)) * 18px))}.eb{font-family:'Space Mono',monospace;font-size:28px;letter-spacing:.24em;text-transform:uppercase;color:var(--cf-accent)}.h{font-family:'Instrument Serif',serif;font-weight:400;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}.g{position:absolute;right:3%;bottom:-14%;font-family:'Instrument Serif',serif;font-style:italic;font-size:820px;line-height:1;color:var(--cf-ink);opacity:calc(.07 * clamp(0,calc(var(--cf-t) / .8),1) * (1 - var(--x)));transform:translateX(calc(var(--cf-progress) * -120px));pointer-events:none}.em{font-style:italic;color:var(--cf-accent)}.rule{height:2px;background:var(--cf-accent);width:calc(clamp(0,calc((var(--cf-t) - var(--rd,1)) / 1.2),1) * var(--rw,40%))}</style><div class=\"r\"><div class=\"g\">01</div><div class=\"c\"><div class=\"i eb\" style=\"--d:0.5\">01 &middot; The idea</div><div class=\"h\" style=\"font-size:156px;margin-top:40px;max-width:1560px\"><span class=\"i\" style=\"--d:0.75\">What if&nbsp;</span><span class=\"i em\" style=\"--d:1.15;--s:1\">{{outcome}}</span> <span class=\"i\" style=\"--d:1.75\">took days,&nbsp;</span><span class=\"i\" style=\"--d:2.1\">not quarters?</span></div><div class=\"rule\" style=\"--rd:2.7;--rw:22%;margin-top:48px\"></div></div></div>"
+            }
+          },
+          {
+            "id": "b4-proof",
+            "startTime": 14.3,
+            "duration": 6.4,
+            "source": {
+              "kind": "card",
+              "tokens": {
+                "ink": "#f4ece0",
+                "ink2": "#b8a98f",
+                "accent": "{{accent}}"
+              },
+              "html": "<style>.r{position:relative;width:1920px;height:1080px;box-sizing:border-box;overflow:hidden;color:var(--cf-ink);font-family:Inter,sans-serif;--x:clamp(0,calc((var(--cf-t) - 5.80) / .5),1)}.c{position:absolute;inset:0;padding:0 10%;display:flex;flex-direction:column;justify-content:center;transform-origin:var(--o,30% 50%);transform:scale(calc(1 + var(--cf-progress) * .05));opacity:calc(1 - var(--x));filter:blur(calc(var(--x) * 16px))}.i{--p:clamp(0,calc((var(--cf-t) - var(--d,0)) / var(--s,.8)),1);--e:calc(var(--p) * (2 - var(--p)));display:inline-block;opacity:var(--e);transform:translateY(calc((1 - var(--e)) * 60px));filter:blur(calc((1 - var(--e)) * 18px))}.eb{font-family:'Space Mono',monospace;font-size:28px;letter-spacing:.24em;text-transform:uppercase;color:var(--cf-accent)}.h{font-family:'Instrument Serif',serif;font-weight:400;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}.g{position:absolute;right:3%;bottom:-14%;font-family:'Instrument Serif',serif;font-style:italic;font-size:820px;line-height:1;color:var(--cf-ink);opacity:calc(.07 * clamp(0,calc(var(--cf-t) / .8),1) * (1 - var(--x)));transform:translateX(calc(var(--cf-progress) * -120px));pointer-events:none}.em{font-style:italic;color:var(--cf-accent)}.rule{height:2px;background:var(--cf-accent);width:calc(clamp(0,calc((var(--cf-t) - var(--rd,1)) / 1.2),1) * var(--rw,40%))}</style><div class=\"r\"><div class=\"g\">03</div><div class=\"c\" style=\"--o:40% 50%\"><div class=\"i eb\" style=\"--d:0.5\">03 &middot; Proof</div><div style=\"display:flex;align-items:flex-end;gap:56px;margin-top:10px\"><div class=\"h i\" style=\"--d:0.9;--s:.9;font-size:600px;line-height:.86;color:var(--cf-accent);transform:translateY(calc((1 - var(--e)) * 60px)) scale(calc(1.18 - var(--e) * .18));transform-origin:0 100%\">{{metricValue}}</div><div style=\"padding-bottom:60px\"><div class=\"rule\" style=\"--rd:1.8;--rw:100%;width:calc(clamp(0,calc((var(--cf-t) - 1.8) / 1),1) * 640px);margin-bottom:32px\"></div><div class=\"h i em\" style=\"--d:2.0;font-size:104px;max-width:760px;color:var(--cf-ink)\">{{metricLabel}}</div></div></div></div></div>"
+            }
+          },
+          {
+            "id": "b6-cta",
+            "startTime": 24.7,
+            "duration": 5.3,
+            "source": {
+              "kind": "card",
+              "tokens": {
+                "ink": "#f4ece0",
+                "ink2": "#b8a98f",
+                "accent": "{{accent}}"
+              },
+              "html": "<style>.r{position:relative;width:1920px;height:1080px;box-sizing:border-box;overflow:hidden;color:var(--cf-ink);font-family:Inter,sans-serif;--x:clamp(0,calc((var(--cf-t) - 4.70) / .5),1)}.c{position:absolute;inset:0;padding:0 10%;display:flex;flex-direction:column;justify-content:center;transform-origin:var(--o,30% 50%);transform:scale(calc(1 + var(--cf-progress) * .05));opacity:calc(1 - var(--x));filter:blur(calc(var(--x) * 16px))}.i{--p:clamp(0,calc((var(--cf-t) - var(--d,0)) / var(--s,.8)),1);--e:calc(var(--p) * (2 - var(--p)));display:inline-block;opacity:var(--e);transform:translateY(calc((1 - var(--e)) * 60px));filter:blur(calc((1 - var(--e)) * 18px))}.eb{font-family:'Space Mono',monospace;font-size:28px;letter-spacing:.24em;text-transform:uppercase;color:var(--cf-accent)}.h{font-family:'Instrument Serif',serif;font-weight:400;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}.g{position:absolute;right:3%;bottom:-14%;font-family:'Instrument Serif',serif;font-style:italic;font-size:820px;line-height:1;color:var(--cf-ink);opacity:calc(.07 * clamp(0,calc(var(--cf-t) / .8),1) * (1 - var(--x)));transform:translateX(calc(var(--cf-progress) * -120px));pointer-events:none}.em{font-style:italic;color:var(--cf-accent)}.rule{height:2px;background:var(--cf-accent);width:calc(clamp(0,calc((var(--cf-t) - var(--rd,1)) / 1.2),1) * var(--rw,40%))}</style><div class=\"r\"><div class=\"c\" style=\"padding:0;align-items:center;text-align:center;--o:50% 50%\"><div style=\"height:210px\"></div><div class=\"h\" style=\"font-size:150px\"><span class=\"i em\" style=\"--d:0.9;--s:1\">{{cta}}</span><span class=\"i em\" style=\"--d:1.4;margin-left:.25em;transform:translateX(calc(clamp(0,calc((var(--cf-t) - 1.7) / .9),1) * 24px))\">&rarr;</span></div><div class=\"rule\" style=\"--rd:1.5;--rw:520px;width:calc(clamp(0,calc((var(--cf-t) - 1.5) / 1.2),1) * 520px);margin:40px auto 44px\"></div><div class=\"i eb\" style=\"--d:1.8;color:var(--cf-ink2)\">From {{senderName}}</div></div></div>"
+            }
+          }
+        ]
+      },
+      {
+        "id": "textA",
+        "kind": "overlay",
+        "name": "Type A",
+        "contents": [
+          {
+            "id": "b1-open",
+            "startTime": 0,
+            "duration": 4.8,
+            "source": {
+              "kind": "card",
+              "tokens": {
+                "ink": "#f4ece0",
+                "ink2": "#b8a98f",
+                "accent": "{{accent}}"
+              },
+              "html": "<style>.r{position:relative;width:1920px;height:1080px;box-sizing:border-box;overflow:hidden;color:var(--cf-ink);font-family:Inter,sans-serif;--x:clamp(0,calc((var(--cf-t) - 4.20) / .5),1)}.c{position:absolute;inset:0;padding:0 10%;display:flex;flex-direction:column;justify-content:center;transform-origin:var(--o,30% 50%);transform:scale(calc(1 + var(--cf-progress) * .05));opacity:calc(1 - var(--x));filter:blur(calc(var(--x) * 16px))}.i{--p:clamp(0,calc((var(--cf-t) - var(--d,0)) / var(--s,.8)),1);--e:calc(var(--p) * (2 - var(--p)));display:inline-block;opacity:var(--e);transform:translateY(calc((1 - var(--e)) * 60px));filter:blur(calc((1 - var(--e)) * 18px))}.eb{font-family:'Space Mono',monospace;font-size:28px;letter-spacing:.24em;text-transform:uppercase;color:var(--cf-accent)}.h{font-family:'Instrument Serif',serif;font-weight:400;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}.g{position:absolute;right:3%;bottom:-14%;font-family:'Instrument Serif',serif;font-style:italic;font-size:820px;line-height:1;color:var(--cf-ink);opacity:calc(.07 * clamp(0,calc(var(--cf-t) / .8),1) * (1 - var(--x)));transform:translateX(calc(var(--cf-progress) * -120px));pointer-events:none}.em{font-style:italic;color:var(--cf-accent)}.rule{height:2px;background:var(--cf-accent);width:calc(clamp(0,calc((var(--cf-t) - var(--rd,1)) / 1.2),1) * var(--rw,40%))}</style><div class=\"r\"><div class=\"c\"><div class=\"i eb\" style=\"--d:.05\">A thirty-second film, made for</div><div class=\"h\" style=\"font-size:320px;margin-top:18px;white-space:nowrap\"><span class=\"i\" style=\"--d:.2;--s:1\">{{firstName}}</span><span class=\"i em\" style=\"--d:.8\">.</span></div><div class=\"rule\" style=\"--rd:1.2;--rw:36%;margin:34px 0 30px\"></div><div class=\"h\" style=\"font-size:92px;color:var(--cf-ink2)\"><span class=\"i\" style=\"--d:1.5\">at&nbsp;</span><span class=\"i em\" style=\"--d:1.75\">{{company}}</span></div></div></div>"
+            }
+          },
+          {
+            "id": "b3-pain",
+            "startTime": 9.0,
+            "duration": 6.2,
+            "source": {
+              "kind": "card",
+              "tokens": {
+                "ink": "#f4ece0",
+                "ink2": "#b8a98f",
+                "accent": "{{accent}}"
+              },
+              "html": "<style>.r{position:relative;width:1920px;height:1080px;box-sizing:border-box;overflow:hidden;color:var(--cf-ink);font-family:Inter,sans-serif;--x:clamp(0,calc((var(--cf-t) - 5.60) / .5),1)}.c{position:absolute;inset:0;padding:0 10%;display:flex;flex-direction:column;justify-content:center;transform-origin:var(--o,30% 50%);transform:scale(calc(1 + var(--cf-progress) * .05));opacity:calc(1 - var(--x));filter:blur(calc(var(--x) * 16px))}.i{--p:clamp(0,calc((var(--cf-t) - var(--d,0)) / var(--s,.8)),1);--e:calc(var(--p) * (2 - var(--p)));display:inline-block;opacity:var(--e);transform:translateY(calc((1 - var(--e)) * 60px));filter:blur(calc((1 - var(--e)) * 18px))}.eb{font-family:'Space Mono',monospace;font-size:28px;letter-spacing:.24em;text-transform:uppercase;color:var(--cf-accent)}.h{font-family:'Instrument Serif',serif;font-weight:400;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}.g{position:absolute;right:3%;bottom:-14%;font-family:'Instrument Serif',serif;font-style:italic;font-size:820px;line-height:1;color:var(--cf-ink);opacity:calc(.07 * clamp(0,calc(var(--cf-t) / .8),1) * (1 - var(--x)));transform:translateX(calc(var(--cf-progress) * -120px));pointer-events:none}.em{font-style:italic;color:var(--cf-accent)}.rule{height:2px;background:var(--cf-accent);width:calc(clamp(0,calc((var(--cf-t) - var(--rd,1)) / 1.2),1) * var(--rw,40%))}</style><div class=\"r\"><div class=\"g\">02</div><div class=\"c\" style=\"--o:50% 40%\"><div class=\"i eb\" style=\"--d:0.5\">02 &middot; Where it hurts</div><div class=\"h i\" style=\"--d:0.8;--s:1.1;font-size:150px;margin-top:40px;max-width:1560px\">{{pain}}</div><div class=\"i\" style=\"--d:1.6;--s:.9;font-size:54px;line-height:1.4;color:var(--cf-ink2);margin-top:44px;max-width:1300px\">That is the part teams like <span style=\"color:var(--cf-ink)\">{{company}}</span> keep paying for.</div></div></div>"
+            }
+          },
+          {
+            "id": "b5-ask",
+            "startTime": 19.8,
+            "duration": 5.8,
+            "source": {
+              "kind": "card",
+              "tokens": {
+                "ink": "#f4ece0",
+                "ink2": "#b8a98f",
+                "accent": "{{accent}}"
+              },
+              "html": "<style>.r{position:relative;width:1920px;height:1080px;box-sizing:border-box;overflow:hidden;color:var(--cf-ink);font-family:Inter,sans-serif;--x:clamp(0,calc((var(--cf-t) - 5.20) / .5),1)}.c{position:absolute;inset:0;padding:0 10%;display:flex;flex-direction:column;justify-content:center;transform-origin:var(--o,30% 50%);transform:scale(calc(1 + var(--cf-progress) * .05));opacity:calc(1 - var(--x));filter:blur(calc(var(--x) * 16px))}.i{--p:clamp(0,calc((var(--cf-t) - var(--d,0)) / var(--s,.8)),1);--e:calc(var(--p) * (2 - var(--p)));display:inline-block;opacity:var(--e);transform:translateY(calc((1 - var(--e)) * 60px));filter:blur(calc((1 - var(--e)) * 18px))}.eb{font-family:'Space Mono',monospace;font-size:28px;letter-spacing:.24em;text-transform:uppercase;color:var(--cf-accent)}.h{font-family:'Instrument Serif',serif;font-weight:400;line-height:1.02;letter-spacing:-.01em;text-wrap:balance}.g{position:absolute;right:3%;bottom:-14%;font-family:'Instrument Serif',serif;font-style:italic;font-size:820px;line-height:1;color:var(--cf-ink);opacity:calc(.07 * clamp(0,calc(var(--cf-t) / .8),1) * (1 - var(--x)));transform:translateX(calc(var(--cf-progress) * -120px));pointer-events:none}.em{font-style:italic;color:var(--cf-accent)}.rule{height:2px;background:var(--cf-accent);width:calc(clamp(0,calc((var(--cf-t) - var(--rd,1)) / 1.2),1) * var(--rw,40%))}</style><div class=\"r\"><div class=\"g\">04</div><div class=\"c\"><div class=\"i eb\" style=\"--d:0.5\">04 &middot; The ask</div><div class=\"h\" style=\"font-size:150px;margin-top:40px;max-width:1600px\"><span class=\"i\" style=\"--d:0.65\">{{firstName}},&nbsp;</span><span class=\"i\" style=\"--d:0.9\">let us show you&nbsp;</span><span class=\"i em\" style=\"--d:1.3;--s:.9\">{{outcome}}.</span></div></div></div>"
+            }
+          }
+        ]
+      },
+      {
+        "id": "logo",
+        "kind": "image",
+        "name": "Prospect logo",
+        "contents": [
+          {
+            "id": "logo-open",
+            "kind": "image",
+            "startTime": 1.4,
+            "duration": 3.4,
+            "fit": "contain",
+            "region": {
+              "x": 0.66,
+              "y": 0.8,
+              "w": 0.24,
+              "h": 0.07
+            },
+            "source": {
+              "kind": "media",
+              "mediaId": "{{logo}}"
+            },
+            "animate": {
+              "opacity": [
+                {
+                  "time": 0,
+                  "value": 0
+                },
+                {
+                  "time": 0.8,
+                  "value": 0.9,
+                  "easing": "easeOut"
+                },
+                {
+                  "time": 2.8,
+                  "value": 0.9
+                },
+                {
+                  "time": 3.4,
+                  "value": 0,
+                  "easing": "easeIn"
+                }
+              ]
+            }
+          },
+          {
+            "id": "logo-cta",
+            "kind": "image",
+            "startTime": 25,
+            "duration": 4.8,
+            "fit": "contain",
+            "region": {
+              "x": 0.35,
+              "y": 0.22,
+              "w": 0.3,
+              "h": 0.09
+            },
+            "source": {
+              "kind": "media",
+              "mediaId": "{{logo}}"
+            },
+            "animate": {
+              "opacity": [
+                {
+                  "time": 0,
+                  "value": 0
+                },
+                {
+                  "time": 0.7,
+                  "value": 1,
+                  "easing": "easeOut"
+                },
+                {
+                  "time": 4.1,
+                  "value": 1
+                },
+                {
+                  "time": 4.7,
+                  "value": 0,
+                  "easing": "easeIn"
+                }
+              ],
+              "scale": [
+                {
+                  "time": 0,
+                  "value": 0.94
+                },
+                {
+                  "time": 4.8,
+                  "value": 1.04,
+                  "easing": "easeOut"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "glow",
+        "kind": "overlay",
+        "name": "Amber glow",
+        "contents": [
+          {
+            "id": "glow",
+            "startTime": 0,
+            "duration": 30,
+            "source": {
+              "kind": "card",
+              "html": "<div style=\"position:relative;width:1920px;height:1080px;overflow:hidden\"><div style=\"position:absolute;inset:-20%;background:radial-gradient(ellipse 28% 36% at calc(28% + var(--cf-progress) * 44%) calc(38% + var(--cf-progress) * 14%),rgba(247,201,72,.16),rgba(235,166,31,0) 70%),radial-gradient(ellipse 58% 62% at 50% 50%,rgba(12,9,6,0) 30%,rgba(12,9,6,.92) 100%)\"></div></div>"
+            },
+            "animate": {
+              "opacity": [
+                {
+                  "time": 0,
+                  "value": 0.4
+                },
+                {
+                  "time": 1.5,
+                  "value": 1,
+                  "easing": "easeOut"
+                },
+                {
+                  "time": 29.1,
+                  "value": 1
+                },
+                {
+                  "time": 30,
+                  "value": 0,
+                  "easing": "easeIn"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "bed",
+        "kind": "overlay",
+        "name": "Dither bed",
+        "contents": [
+          {
+            "id": "bed",
+            "startTime": 0,
+            "duration": 30,
+            "source": {
+              "kind": "overlay",
+              "primitiveId": "dither-gradient-bg",
+              "params": {
+                "angle": -25,
+                "background": "#0c0906",
+                "color": "#1a1209",
+                "color2": "#5e3c10",
+                "pixelSize": 6,
+                "seed": 11,
+                "speed": 0.5
+              }
+            },
+            "animate": {
+              "opacity": [
+                {
+                  "time": 0,
+                  "value": 1
+                },
+                {
+                  "time": 29.1,
+                  "value": 1
+                },
+                {
+                  "time": 30,
+                  "value": 0,
+                  "easing": "easeIn"
+                }
+              ],
+              "position.x": [
+                {
+                  "time": 0,
+                  "value": 0.47
+                },
+                {
+                  "time": 30,
+                  "value": 0.53,
+                  "easing": "easeInOut"
+                }
+              ],
+              "scale": [
+                {
+                  "time": 0,
+                  "value": 1.12
+                },
+                {
+                  "time": 30,
+                  "value": 1,
+                  "easing": "easeInOut"
+                }
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "music",
+        "kind": "audio",
+        "name": "Music bed",
+        "contents": [
+          {
+            "id": "music",
+            "kind": "audio",
+            "startTime": 0,
+            "duration": 30,
+            "source": {
+              "kind": "media",
+              "mediaId": "{{music}}",
+              "audioRole": "music",
+              "trim": {
+                "start": 0,
+                "end": 30
+              },
+              "volumeDb": -1,
+              "fadeInMs": 400,
+              "fadeOutMs": 2000
+            }
+          }
+        ]
+      },
+      {
+        "id": "sfx",
+        "kind": "audio",
+        "name": "Hits",
+        "contents": [
+          {
+            "id": "sfx-tick",
+            "kind": "audio",
+            "startTime": 0.25,
+            "duration": 0.097,
+            "source": {
+              "kind": "media",
+              "mediaId": "{{sfxTick}}",
+              "audioRole": "sfx",
+              "volumeDb": -8
+            }
+          },
+          {
+            "id": "sfx-w1",
+            "kind": "audio",
+            "startTime": 3.9,
+            "duration": 0.781,
+            "source": {
+              "kind": "media",
+              "mediaId": "{{sfxWhoosh}}",
+              "audioRole": "sfx",
+              "volumeDb": -6
+            }
+          },
+          {
+            "id": "sfx-w2",
+            "kind": "audio",
+            "startTime": 9,
+            "duration": 0.781,
+            "source": {
+              "kind": "media",
+              "mediaId": "{{sfxWhoosh}}",
+              "audioRole": "sfx",
+              "volumeDb": -6
+            }
+          },
+          {
+            "id": "sfx-riser",
+            "kind": "audio",
+            "startTime": 13.9,
+            "duration": 1.202,
+            "source": {
+              "kind": "media",
+              "mediaId": "{{sfxRiser}}",
+              "audioRole": "sfx",
+              "volumeDb": -8
+            }
+          },
+          {
+            "id": "sfx-impact",
+            "kind": "audio",
+            "startTime": 15.3,
+            "duration": 1.48,
+            "source": {
+              "kind": "media",
+              "mediaId": "{{sfxImpact}}",
+              "audioRole": "sfx",
+              "volumeDb": -5
+            }
+          },
+          {
+            "id": "sfx-w3",
+            "kind": "audio",
+            "startTime": 19.8,
+            "duration": 0.781,
+            "source": {
+              "kind": "media",
+              "mediaId": "{{sfxWhoosh}}",
+              "audioRole": "sfx",
+              "volumeDb": -6
+            }
+          },
+          {
+            "id": "sfx-w4",
+            "kind": "audio",
+            "startTime": 24.7,
+            "duration": 0.781,
+            "source": {
+              "kind": "media",
+              "mediaId": "{{sfxWhoosh}}",
+              "audioRole": "sfx",
+              "volumeDb": -6
+            }
+          },
+          {
+            "id": "sfx-chime",
+            "kind": "audio",
+            "startTime": 25.7,
+            "duration": 0.539,
+            "source": {
+              "kind": "media",
+              "mediaId": "{{sfxResolve}}",
+              "audioRole": "sfx",
+              "volumeDb": -8
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "parameters": [
+    {
+      "name": "firstName",
+      "type": "string",
+      "required": true,
+      "maxLength": 12,
+      "label": "First name"
+    },
+    {
+      "name": "company",
+      "type": "string",
+      "required": true,
+      "maxLength": 40,
+      "label": "Company"
+    },
+    {
+      "name": "pain",
+      "type": "string",
+      "required": true,
+      "maxLength": 70,
+      "label": "Their pain, one sentence"
+    },
+    {
+      "name": "outcome",
+      "type": "string",
+      "required": true,
+      "maxLength": 40,
+      "label": "The outcome you sell"
+    },
+    {
+      "name": "metricValue",
+      "type": "number",
+      "required": true,
+      "min": 0,
+      "max": 9999,
+      "label": "Proof number"
+    },
+    {
+      "name": "metricLabel",
+      "type": "string",
+      "required": true,
+      "maxLength": 40,
+      "label": "What the number is"
+    },
+    {
+      "name": "logo",
+      "type": "media",
+      "kind": "image",
+      "required": true,
+      "label": "Prospect logo (PNG on transparent, light ink)",
+      "sample": {
+        "url": "https://cdn.cueframe.ai/templates/clay-outbound-v1/logo.png",
+        "sha256": "73b660e4a4f3021c0e5d274d8842bb4cf3396d78e55d4c97b88b4ff61008c05c",
+        "mimeType": "image/png"
+      }
+    },
+    {
+      "name": "cta",
+      "type": "string",
+      "required": false,
+      "default": "Book 15 minutes",
+      "maxLength": 24,
+      "label": "Call to action"
+    },
+    {
+      "name": "senderName",
+      "type": "string",
+      "required": false,
+      "default": "The CueFrame team",
+      "maxLength": 40,
+      "label": "Signed by"
+    },
+    {
+      "name": "accent",
+      "type": "color",
+      "required": false,
+      "default": "#f7c948",
+      "label": "Accent color"
+    },
+    {
+      "name": "music",
+      "type": "media",
+      "kind": "audio",
+      "required": true,
+      "label": "Sound: music bed (pass { sample: true } for the house bed)",
+      "sample": {
+        "url": "https://cdn.cueframe.ai/packs/music/v1/awake-electronic.mp3",
+        "sha256": "85d44a98775e51ed321c968116ddfb044dd6dd18cf13f971a34b1d541258b7de",
+        "mimeType": "audio/mpeg",
+        "durationSec": 57.314
+      }
+    },
+    {
+      "name": "sfxWhoosh",
+      "type": "media",
+      "kind": "audio",
+      "required": true,
+      "label": "Sound: beat-change whoosh",
+      "sample": {
+        "url": "https://cdn.cueframe.ai/packs/sfx/v1/whoosh-low.wav",
+        "sha256": "7ec8e4ec2c707860e0bd7ad0a184c24a0aa731397f88d89723484e77c41dc297",
+        "mimeType": "audio/wav",
+        "durationSec": 0.781
+      }
+    },
+    {
+      "name": "sfxRiser",
+      "type": "media",
+      "kind": "audio",
+      "required": true,
+      "label": "Sound: riser into the proof",
+      "sample": {
+        "url": "https://cdn.cueframe.ai/packs/sfx/v1/riser-power.wav",
+        "sha256": "79f2659c5217bc9a53b45d3e932841ce49f0124fbf076ea3ba156b9535b57640",
+        "mimeType": "audio/wav",
+        "durationSec": 1.202
+      }
+    },
+    {
+      "name": "sfxImpact",
+      "type": "media",
+      "kind": "audio",
+      "required": true,
+      "label": "Sound: impact on the number",
+      "sample": {
+        "url": "https://cdn.cueframe.ai/packs/sfx/v1/impact-bell.wav",
+        "sha256": "0cf889fe8e74b58b8383e484b5bcfc7d9cda00174a6356ab3a40f48839e28da6",
+        "mimeType": "audio/wav",
+        "durationSec": 1.48
+      }
+    },
+    {
+      "name": "sfxResolve",
+      "type": "media",
+      "kind": "audio",
+      "required": true,
+      "label": "Sound: resolve on the call to action",
+      "sample": {
+        "url": "https://cdn.cueframe.ai/packs/sfx/v1/confirm-chime.wav",
+        "sha256": "243e9fd2b02ff01fb3ded17cc7a4c7d0234f339a7ccacbf16116b62894ebf6dc",
+        "mimeType": "audio/wav",
+        "durationSec": 0.539
+      }
+    },
+    {
+      "name": "sfxTick",
+      "type": "media",
+      "kind": "audio",
+      "required": true,
+      "label": "Sound: opening tick",
+      "sample": {
+        "url": "https://cdn.cueframe.ai/packs/sfx/v1/tick-soft.wav",
+        "sha256": "f806867d4d9fb2e91f41a02e10e54b9ae400e75b39fd077d9b971939d5aea857",
+        "mimeType": "audio/wav",
+        "durationSec": 0.097
+      }
+    }
+  ],
+  "components": {},
+  "brandKit": {
+    "kitId": "template",
+    "name": "Outbound, espresso and amber",
+    "description": "Espresso ground, dither texture, one amber accent.",
+    "colors": {
+      "primary": "#f7c948",
+      "secondary": "#eba61f",
+      "accent": "#f7c948",
+      "background": "#0c0906",
+      "text": "#f4ece0"
+    },
+    "headingFont": {
+      "fontFamily": "Instrument Serif",
+      "fontWeight": 400
+    },
+    "bodyFont": {
+      "fontFamily": "Inter",
+      "fontWeight": 400
+    }
+  },
+  "presets": {
+    "amber": {
+      "label": "Amber",
+      "values": {
+        "accent": "#f7c948"
+      }
+    }
+  },
+  "rubric": "# A thirty-second film for one prospect\n\nReview against the film quality bar (brain spec 2026-09-30-template-film-quality-bar): watch the full render at 1x with sound, then check the 1 fps contact sheet. Six overlapping beats (open 0 to 4.8 s, idea 3.9 to 9.9, pain 9 to 15.2, proof 14.3 to 20.7, ask 19.8 to 25.6, call to action 24.7 to 30). No frame shows only the background between beats. The first name fills the open, the proof number fills the proof beat, every line is read at 1x, and the pain sentence balances on at most two lines at 70 characters.",
+  "provenance": {
+    "label": "CueFrame, outbound reference film",
+    "notes": "Built through the staging MCP with the card motion runtime, the dither-gradient-bg primitive and the CC0 music and SFX packs. Sample logo is the CueFrame wordmark; a row supplies the prospect logo."
+  },
+  "gallery": {
+    "status": "draft",
+    "category": "Outbound",
+    "format": "16:9",
+    "duration": "30 seconds",
+    "details": [
+      "One row per prospect",
+      "Six overlapping kinetic beats",
+      "Music bed and hits"
+    ],
+    "prompt": "Make a 30-second personal outbound film for one prospect from a table row: their first name, company, pain, the outcome we sell, one proof number with its label, their logo and a call to action. Kinetic type over a moving espresso and amber ground, a music bed and hits on every beat change.",
+    "transcriptExcerpt": null
+  }
+}

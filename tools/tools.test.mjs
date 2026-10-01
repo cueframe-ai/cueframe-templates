@@ -1,13 +1,14 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { execFileSync, spawnSync } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { CURRENT_MATTE_BAKE_VERSION } from '@cueframe/kernel/component-runtime/template';
 import { validateRepo, validateTemplateDir } from './validate.mjs';
-import { render, catalogEntry } from './catalog.mjs';
+import { render, catalogEntry, materializeArtifacts } from './catalog.mjs';
 import { bundleComponent } from './bundle.mjs';
 
 const tools = dirname(fileURLToPath(import.meta.url));
@@ -51,7 +52,9 @@ function repo(docs) {
 
 test('validate passes a good repo and names the bad slug on a broken one', async () => {
   const good = repo([document('good-one'), document('good-two')]);
-  writeFileSync(join(good, 'templates.json'), await render(good));
+  const generated = await render(good);
+  await materializeArtifacts(good, generated);
+  writeFileSync(join(good, 'templates.json'), generated);
   try {
     const ok = await validateRepo(good);
     assert.deepEqual(ok.results.map((r) => [r.dir, r.problems]), [['good-one', []], ['good-two', []]]);
@@ -130,14 +133,31 @@ test('the catalog is schemaVersion 2 with published rows only, presets per row, 
     assert.deepEqual(catalog.templates.map((t) => t.slug), ['pub-one']);
     const row = catalog.templates[0];
     assert.equal(row.title, 'Doc pub-one');
+    assert.equal(row.documentSha256, createHash('sha256').update(readFileSync(join(root, 'pub-one', 'template.cueframe'))).digest('hex'));
     assert.equal(row.template, 'https://github.com/cueframe-ai/cueframe-templates/tree/main/pub-one');
-    assert.equal(row.projectTemplate, 'https://raw.githubusercontent.com/cueframe-ai/cueframe-templates/main/pub-one/template.cueframe');
+    assert.equal(row.projectTemplate, `https://raw.githubusercontent.com/cueframe-ai/cueframe-templates/main/artifacts/${row.documentSha256}.cueframe`);
     assert.deepEqual(row.presets, [{ name: 'granite', label: 'Granite', brandKit: 'template:pub-one:granite' }]);
     assert.deepEqual(catalog.brandKits.map((k) => [k.kitId, k.name, k.fromTemplate, k.fromPreset]), [
       ['template:pub-one', 'Document kit', 'pub-one', undefined],
       ['template:pub-one:granite', 'Granite kit', 'pub-one', 'granite'],
     ]);
     assert.equal(catalogEntry(document('x', { gallery: { status: 'draft' } })), null);
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('content-addressed document copies stay immutable', async () => {
+  const root = repo([document('pub-one')]);
+  try {
+    const generated = await render(root);
+    await materializeArtifacts(root, generated);
+    const digest = JSON.parse(generated).templates[0].documentSha256;
+    const artifact = join(root, 'artifacts', `${digest}.cueframe`);
+    assert.equal(readFileSync(artifact, 'utf8'), readFileSync(join(root, 'pub-one', 'template.cueframe'), 'utf8'));
+    writeFileSync(artifact, 'changed');
+    await assert.rejects(materializeArtifacts(root, generated), /Immutable artifact/);
+    assert.deepEqual((await validateRepo(root)).missingArtifacts, ['pub-one']);
   } finally {
     rmSync(root, { recursive: true, force: true });
   }
