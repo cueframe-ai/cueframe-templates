@@ -9,7 +9,10 @@ reconstructed from prose.
 
 The machine-readable catalog is [`templates.json`](./templates.json)
 (`schemaVersion: 2`), generated from the published documents by
-`node tools/catalog.mjs`. Drafts (no hosted render and poster yet) are in the
+`node tools/catalog.mjs`. Each row pins the document SHA-256 and points to a
+content-addressed copy in [`artifacts/`](./artifacts); old copies stay so a
+catalog read during publication still resolves the exact document it named.
+Do not edit an artifact. Drafts (no hosted render and poster yet) are in the
 repository but not in the catalog.
 
 ## Templates
@@ -25,8 +28,10 @@ each document; nothing binary is committed here.
 
 ## Use a template
 
-- **Desktop app:** Home, "From template", pick the `template.cueframe`, fill
-  its parameters (or use the sample), Create. A template is only ever read.
+- **Desktop app:** Projects → From template, choose a catalog document or open
+  a local `template.cueframe`, fill its parameters (or use the sample), then
+  Create. Preparation finishes on Projects before Open becomes available.
+  A template is only ever read.
 - **API:** `POST /v1/templates/<slug>/apply { projectId, values, media, preset? }`
   binds it into a project; `POST /v1/templates/<slug>/renders` renders one row
   with a share link. The public catalog is served at
@@ -45,6 +50,7 @@ preset with its samples, and check the catalog with:
 ```bash
 npm install
 npm run setup     # installs the pre-push hook
+npm run catalog   # updates catalog and writes new immutable document copies
 npm run validate
 ```
 
