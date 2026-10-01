@@ -12,7 +12,7 @@
     "bundle": "node tools/bundle.mjs"
   },
   "devDependencies": {
-    "@cueframe/kernel": "0.2.61",
+    "@cueframe/kernel": "0.2.64",
     "esbuild": "0.25.12"
   }
 }

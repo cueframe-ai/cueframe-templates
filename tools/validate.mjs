@@ -51,6 +51,19 @@ export async function validateTemplateDir(root, dir) {
         problems.push(`${p.name}: matte ${key} is ${m.bakeVersion}, the kernel bakes ${CURRENT_MATTE_BAKE_VERSION}`);
       }
       if (p.sample === undefined) problems.push(`${p.name}: a prepared matte needs the sample it was baked from`);
+      if (published && !m.geometry) problems.push(`${p.name}: prepared matte ${key} needs a pinned geometry sidecar`);
+      if (m.geometry) {
+        const local = join(root, dir, `${key}.geometry.json`);
+        try {
+          const bytes = await readFile(local);
+          const { createHash } = await import('node:crypto');
+          if (createHash('sha256').update(bytes).digest('hex') !== m.geometry.sha256) problems.push(`${p.name}: geometry ${key} digest differs from ${local}`);
+          const geometry = JSON.parse(bytes.toString('utf8'));
+          if (geometry.matte_hash !== key || geometry.bake_version !== m.bakeVersion || !Array.isArray(geometry.frames) || geometry.frames.length === 0) {
+            problems.push(`${p.name}: geometry ${key} does not describe its matte`);
+          }
+        } catch { problems.push(`${p.name}: geometry ${key} is missing or invalid`); }
+      }
     }
     if (!p.sample) {
       if (published && p.required) problems.push(`media parameter ${p.name} has no sample; a published template binds every preset with { sample: true }`);
