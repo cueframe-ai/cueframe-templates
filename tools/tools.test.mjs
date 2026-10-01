@@ -118,8 +118,8 @@ test('a prepared matte at another bake version fails, naming both', async () => 
   const root = repo([stale]);
   try {
     const problems = await validateTemplateDir(root, 'stale-matte');
-    assert.equal(problems.length, 1);
-    assert.match(problems[0], new RegExp(`old-${CURRENT_MATTE_BAKE_VERSION}.*${CURRENT_MATTE_BAKE_VERSION}`));
+    assert.ok(problems.some((problem) => new RegExp(`old-${CURRENT_MATTE_BAKE_VERSION}.*${CURRENT_MATTE_BAKE_VERSION}`).test(problem)));
+    assert.ok(problems.some((problem) => /needs a pinned geometry sidecar/.test(problem)));
   } finally {
     rmSync(root, { recursive: true, force: true });
   }
