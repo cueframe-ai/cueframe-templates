@@ -8,6 +8,7 @@
     "setup": "git config core.hooksPath .githooks",
     "test": "node --test tools/*.test.mjs",
     "validate": "node tools/validate.mjs",
+    "check": "node tools/kernel-check.mjs",
     "catalog": "node tools/catalog.mjs",
     "bundle": "node tools/bundle.mjs"
   },

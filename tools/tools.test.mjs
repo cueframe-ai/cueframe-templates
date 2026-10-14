@@ -10,6 +10,7 @@ import { CURRENT_MATTE_BAKE_VERSION } from '@cueframe/kernel/component-runtime/t
 import { validateRepo, validateTemplateDir } from './validate.mjs';
 import { render, catalogEntry, materializeArtifacts } from './catalog.mjs';
 import { bundleComponent } from './bundle.mjs';
+import { kernelProblems } from './kernel-check.mjs';
 
 const tools = dirname(fileURLToPath(import.meta.url));
 const SHA = 'a'.repeat(64);
@@ -198,4 +199,41 @@ test('the pre-push hook exits non-zero when validate fails', () => {
     rmSync(bad, { recursive: true, force: true });
   }
   assert.equal(execFileSync('sh', ['-c', `head -1 ${hook}`], { encoding: 'utf8' }).trim(), '#!/bin/sh');
+});
+
+test('the kernel check passes a native document', async () => {
+  assert.deepEqual(await kernelProblems(document('native')), []);
+});
+
+test('the kernel check refuses retired effects, removed primitives, legacy keyframes and TSX components', async () => {
+  const doc = document('stale');
+  const [title, video] = doc.composition.tracks;
+  video.contents[0].effects = [{ primitiveId: 'color-grade', params: { preset: 'cinematic' } }];
+  title.contents.push({ id: 'bed', kind: 'overlay', startTime: 0, duration: 2, source: { kind: 'overlay', primitiveId: 'dither-gradient-bg', params: {} } });
+  title.contents[0].animate = { opacity: [{ time: 0, value: 0 }, { time: 1, value: 1 }] };
+  doc.composition.tracks.push({ id: 'warp', kind: 'overlay', name: 'Warp', contents: [{ id: 'w', kind: 'overlay', startTime: 0, duration: 2, source: { kind: 'component', componentId: 'warp', props: {} } }] });
+  doc.components = { warp: { name: 'Warp', description: 'x', category: 'text', propSchema: {}, source: { version: 3, componentId: 'warp', tsxSource: 'export default () => null;', manifest: { version: 2, assets: {}, graphics: { api: 'webgl2', required: true, accelerationPreference: 'software-allowed' }, alphaPolicy: 'requires-transparency' } } } };
+  const problems = (await kernelProblems(doc)).join('\n');
+  assert.match(problems, /effect_retired/);
+  assert.match(problems, /primitive dither-gradient-bg is not in the kernel's primitive catalog/);
+  assert.match(problems, /retired `animate` keyframe record/);
+  assert.match(problems, /component warp: a retired TSX/);
+  assert.match(problems, /clip w: component warp executes as version none/);
+});
+
+test('the kernel check keeps the catalog primitive heroText', async () => {
+  const doc = document('hero');
+  doc.composition.tracks[0].contents[0].source = { kind: 'overlay', primitiveId: 'heroText', params: { text: '{{title}}' } };
+  assert.deepEqual(await kernelProblems(doc), []);
+});
+
+test('validate reports what the kernel refuses', async () => {
+  const doc = document('graded');
+  doc.composition.tracks[1].contents[0].effects = [{ primitiveId: 'vignette', params: { intensity: 0.1 } }];
+  const root = repo([doc]);
+  try {
+    assert.match((await validateTemplateDir(root, 'graded')).join('\n'), /effect_retired/);
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
 });

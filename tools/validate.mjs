@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 // Every template document in the repo: parsed by the kernel, its references
 // declared and placed, every preset bound with `{ sample: true }` media, its
-// prepared mattes at the kernel's bake version, and the catalog up to date.
+// prepared mattes at the kernel's bake version, nothing the HyperFrames-only kernel refuses
+// (tools/kernel-check.mjs), and the catalog up to date.
 // Exits non-zero naming each failing directory. `node tools/validate.mjs [root]`.
 import { readdir, readFile } from 'node:fs/promises';
 import { join, dirname, resolve } from 'node:path';
@@ -13,6 +14,7 @@ import {
   CURRENT_MATTE_BAKE_VERSION,
 } from '@cueframe/kernel/component-runtime/template';
 import { render as renderCatalog, CATALOG_FILE } from './catalog.mjs';
+import { kernelProblems } from './kernel-check.mjs';
 
 export const SKIPPED_DIRS = new Set(['tools', 'assets', 'artifacts', 'node_modules']);
 export const DOCUMENT_FILE = 'template.cueframe';
@@ -32,11 +34,16 @@ export async function validateTemplateDir(root, dir) {
     problems.push(`${DOCUMENT_FILE} is ${Buffer.byteLength(raw)} bytes; the limit is ${MAX_DOCUMENT_BYTES}`);
   }
   let doc;
+  let json;
   try {
-    doc = parseTemplateDocument(JSON.parse(raw));
+    json = JSON.parse(raw);
+    doc = parseTemplateDocument(json);
   } catch (error) {
     return [`does not parse: ${error instanceof Error ? error.message : String(error)}`];
   }
+  // What the HyperFrames-only kernel refuses at admission and render (retired effects, removed
+  // primitives, non-native components), which parsing alone does not catch.
+  problems.push(...await kernelProblems(json, { bindErrors: false }));
   if (doc.slug !== dir) problems.push(`slug ${doc.slug} does not match directory ${dir}`);
   const refs = checkReferences(doc);
   if (refs.undeclared.length) problems.push(`undeclared parameters: ${refs.undeclared.join(', ')}`);
