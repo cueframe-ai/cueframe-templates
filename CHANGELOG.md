@@ -1,5 +1,13 @@
 # Changelog
 
+## 2026-10-14: tools pinned to the published kernel 0.7.1
+
+`package.json` pins `@cueframe/kernel` 0.7.1 from npm (it was 0.2.64). The
+kernel's optional peers that the check imports are pinned beside it:
+`@babel/parser`, `linkedom`, `@hyperframes/parsers` and `@hyperframes/lint`.
+Every document passes `npm run validate` against 0.7.1 and 0.7.0; no document
+changed, so the catalog digests are unchanged.
+
 ## 2026-10-13: HyperFrames-native catalog (kernel 0.6.0)
 
 Every document now passes the HyperFrames-only kernel: `npm run check`
