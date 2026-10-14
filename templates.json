@@ -3,7 +3,7 @@
   "templates": [
     {
       "slug": "yosemite-peregrines",
-      "documentSha256": "1edb2c6c214135b1751f456b20decff93ba5c394bedaab0d0e686d9bc35d3207",
+      "documentSha256": "bd7b95be3166875aafc69f742e8f030818ef5ce21b9da74da3aa79df3a2f8815",
       "title": "Yosemite Peregrines",
       "category": "Spoken stories",
       "format": "16:9",
@@ -19,7 +19,7 @@
       ],
       "prompt": "Turn a strong 10-second talking-head quote into a cinematic landscape edit. Keep the speaker and any source lower-third fully visible, place one restrained title behind the subject, add accurate word-timed captions above the bottom safe area, preserve the original voice, and use my brand kit for the logo and caption accents.",
       "template": "https://github.com/cueframe-ai/cueframe-templates/tree/main/yosemite-peregrines",
-      "projectTemplate": "https://raw.githubusercontent.com/cueframe-ai/cueframe-templates/main/artifacts/1edb2c6c214135b1751f456b20decff93ba5c394bedaab0d0e686d9bc35d3207.cueframe",
+      "projectTemplate": "https://raw.githubusercontent.com/cueframe-ai/cueframe-templates/main/artifacts/bd7b95be3166875aafc69f742e8f030818ef5ce21b9da74da3aa79df3a2f8815.cueframe",
       "original": {
         "label": "National Park Service: Peregrine Falcons in Yosemite",
         "href": "https://www.nps.gov/media/video/view.htm?id=53135a56-4998-4d6e-b26d-24fe0acca1c3"
@@ -37,7 +37,7 @@
     },
     {
       "slug": "yosemite-warp-text",
-      "documentSha256": "4a85144da22592c46ae5ed3e1a7b0a03dfc8d6e6cc8367a8e68cf5b0ca2d4a58",
+      "documentSha256": "e5737626a01badb4e75b9172950ab89d611e2a45f4f64706608e3e9ed516542d",
       "title": "Carved by water",
       "category": "Motion design",
       "format": "16:9",
@@ -53,7 +53,7 @@
       ],
       "prompt": "Make an 8-second landscape film using waterfall footage. Use oversized amber typography reading “Carved by water”, a restrained cinematic grade, and natural ambient sound. Keep the title, footage, and sound independently editable. Use my footage if I supply it; otherwise help me find suitable licensed footage.",
       "template": "https://github.com/cueframe-ai/cueframe-templates/tree/main/yosemite-warp-text",
-      "projectTemplate": "https://raw.githubusercontent.com/cueframe-ai/cueframe-templates/main/artifacts/4a85144da22592c46ae5ed3e1a7b0a03dfc8d6e6cc8367a8e68cf5b0ca2d4a58.cueframe",
+      "projectTemplate": "https://raw.githubusercontent.com/cueframe-ai/cueframe-templates/main/artifacts/e5737626a01badb4e75b9172950ab89d611e2a45f4f64706608e3e9ed516542d.cueframe",
       "original": {
         "label": "Yosemite Upper Falls, CueFrame archive footage; title shader ported from React Bits WarpText (MIT)",
         "href": "https://github.com/DavidHDev/react-bits"

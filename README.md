@@ -21,7 +21,7 @@ repository but not in the catalog.
 | --- | --- | --- |
 | [`yosemite-warp-text`](./yosemite-warp-text) | Oversized WebGL typography over waterfall footage; presets `carved` and `granite` | published |
 | [`yosemite-peregrines`](./yosemite-peregrines) | A ranger's talking-head beat with a behind-subject title and word-timed captions | published |
-| [`device-ui-motion`](./device-ui-motion) | A glass-UI showcase on a baked phone mesh | draft |
+| [`device-ui-motion`](./device-ui-motion) | A glass-UI showcase on a baked phone mesh | withdrawn until a native port (see CHANGELOG) |
 
 Samples and prepared mattes live on `cdn.cueframe.ai`, pinned by sha256 in
 each document; nothing binary is committed here.
@@ -51,7 +51,7 @@ preset with its samples, and check the catalog with:
 npm install
 npm run setup     # installs the pre-push hook
 npm run catalog   # updates catalog and writes new immutable document copies
-npm run validate
+npm run validate  # includes npm run check: what the HyperFrames-only kernel refuses
 ```
 
 ## Until the cutover

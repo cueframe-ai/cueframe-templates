@@ -19,7 +19,7 @@
           {
             "id": "b2-hook",
             "startTime": 3.9,
-            "duration": 6.0,
+            "duration": 6,
             "source": {
               "kind": "card",
               "tokens": {
@@ -81,7 +81,7 @@
           },
           {
             "id": "b3-pain",
-            "startTime": 9.0,
+            "startTime": 9,
             "duration": 6.2,
             "source": {
               "kind": "card",
@@ -130,28 +130,48 @@
               "kind": "media",
               "mediaId": "{{logo}}"
             },
-            "animate": {
-              "opacity": [
-                {
-                  "time": 0,
-                  "value": 0
-                },
-                {
-                  "time": 0.8,
-                  "value": 0.9,
-                  "easing": "easeOut"
-                },
-                {
-                  "time": 2.8,
-                  "value": 0.9
-                },
-                {
-                  "time": 3.4,
-                  "value": 0,
-                  "easing": "easeIn"
+            "tweens": [
+              {
+                "id": "opacity",
+                "propertyGroup": "visual",
+                "position": 0,
+                "duration": 3.4,
+                "keyframes": {
+                  "format": "percentage",
+                  "easeEach": "none",
+                  "keyframes": [
+                    {
+                      "percentage": 0,
+                      "properties": {
+                        "opacity": 0
+                      },
+                      "ease": "none"
+                    },
+                    {
+                      "percentage": 23.529411764705884,
+                      "properties": {
+                        "opacity": 0.9
+                      },
+                      "ease": "custom(M0,0 C0,0 0.58,1 1,1)"
+                    },
+                    {
+                      "percentage": 82.35294117647058,
+                      "properties": {
+                        "opacity": 0.9
+                      },
+                      "ease": "none"
+                    },
+                    {
+                      "percentage": 100,
+                      "properties": {
+                        "opacity": 0
+                      },
+                      "ease": "custom(M0,0 C0.42,0 1,1 1,1)"
+                    }
+                  ]
                 }
-              ]
-            }
+              }
+            ]
           },
           {
             "id": "logo-cta",
@@ -169,39 +189,74 @@
               "kind": "media",
               "mediaId": "{{logo}}"
             },
-            "animate": {
-              "opacity": [
-                {
-                  "time": 0,
-                  "value": 0
-                },
-                {
-                  "time": 0.7,
-                  "value": 1,
-                  "easing": "easeOut"
-                },
-                {
-                  "time": 4.1,
-                  "value": 1
-                },
-                {
-                  "time": 4.7,
-                  "value": 0,
-                  "easing": "easeIn"
+            "tweens": [
+              {
+                "id": "opacity",
+                "propertyGroup": "visual",
+                "position": 0,
+                "duration": 4.7,
+                "keyframes": {
+                  "format": "percentage",
+                  "easeEach": "none",
+                  "keyframes": [
+                    {
+                      "percentage": 0,
+                      "properties": {
+                        "opacity": 0
+                      },
+                      "ease": "none"
+                    },
+                    {
+                      "percentage": 14.893617021276595,
+                      "properties": {
+                        "opacity": 1
+                      },
+                      "ease": "custom(M0,0 C0,0 0.58,1 1,1)"
+                    },
+                    {
+                      "percentage": 87.23404255319149,
+                      "properties": {
+                        "opacity": 1
+                      },
+                      "ease": "none"
+                    },
+                    {
+                      "percentage": 100,
+                      "properties": {
+                        "opacity": 0
+                      },
+                      "ease": "custom(M0,0 C0.42,0 1,1 1,1)"
+                    }
+                  ]
                 }
-              ],
-              "scale": [
-                {
-                  "time": 0,
-                  "value": 0.94
-                },
-                {
-                  "time": 4.8,
-                  "value": 1.04,
-                  "easing": "easeOut"
+              },
+              {
+                "id": "scale",
+                "propertyGroup": "scale",
+                "position": 0,
+                "duration": 4.8,
+                "keyframes": {
+                  "format": "percentage",
+                  "easeEach": "none",
+                  "keyframes": [
+                    {
+                      "percentage": 0,
+                      "properties": {
+                        "scale": 0.94
+                      },
+                      "ease": "none"
+                    },
+                    {
+                      "percentage": 100,
+                      "properties": {
+                        "scale": 1.04
+                      },
+                      "ease": "custom(M0,0 C0,0 0.58,1 1,1)"
+                    }
+                  ]
                 }
-              ]
-            }
+              }
+            ]
           }
         ]
       },
@@ -218,28 +273,48 @@
               "kind": "card",
               "html": "<div style=\"position:relative;width:1920px;height:1080px;overflow:hidden\"><div style=\"position:absolute;inset:-20%;background:radial-gradient(ellipse 28% 36% at calc(28% + var(--cf-progress) * 44%) calc(38% + var(--cf-progress) * 14%),rgba(247,201,72,.16),rgba(235,166,31,0) 70%),radial-gradient(ellipse 58% 62% at 50% 50%,rgba(12,9,6,0) 30%,rgba(12,9,6,.92) 100%)\"></div></div>"
             },
-            "animate": {
-              "opacity": [
-                {
-                  "time": 0,
-                  "value": 0.4
-                },
-                {
-                  "time": 1.5,
-                  "value": 1,
-                  "easing": "easeOut"
-                },
-                {
-                  "time": 29.1,
-                  "value": 1
-                },
-                {
-                  "time": 30,
-                  "value": 0,
-                  "easing": "easeIn"
+            "tweens": [
+              {
+                "id": "opacity",
+                "propertyGroup": "visual",
+                "position": 0,
+                "duration": 30,
+                "keyframes": {
+                  "format": "percentage",
+                  "easeEach": "none",
+                  "keyframes": [
+                    {
+                      "percentage": 0,
+                      "properties": {
+                        "opacity": 0.4
+                      },
+                      "ease": "none"
+                    },
+                    {
+                      "percentage": 5,
+                      "properties": {
+                        "opacity": 1
+                      },
+                      "ease": "custom(M0,0 C0,0 0.58,1 1,1)"
+                    },
+                    {
+                      "percentage": 97.00000000000001,
+                      "properties": {
+                        "opacity": 1
+                      },
+                      "ease": "none"
+                    },
+                    {
+                      "percentage": 100,
+                      "properties": {
+                        "opacity": 0
+                      },
+                      "ease": "custom(M0,0 C0.42,0 1,1 1,1)"
+                    }
+                  ]
                 }
-              ]
-            }
+              }
+            ]
           }
         ]
       },
@@ -253,57 +328,101 @@
             "startTime": 0,
             "duration": 30,
             "source": {
-              "kind": "overlay",
-              "primitiveId": "dither-gradient-bg",
-              "params": {
-                "angle": -25,
-                "background": "#0c0906",
-                "color": "#1a1209",
-                "color2": "#5e3c10",
-                "pixelSize": 6,
-                "seed": 11,
-                "speed": 0.5
+              "kind": "card",
+              "html": "<style>.r{position:relative;width:1920px;height:1080px;overflow:hidden;background:var(--cf-bg)}.g{position:absolute;inset:-25%;background:repeating-linear-gradient(65deg,var(--cf-bg) 0%,var(--cf-c1) 12%,var(--cf-c2) 25%,var(--cf-c1) 38%,var(--cf-bg) 50%);transform:translateX(calc(var(--cf-t) * 2.4px))}</style><div class=\"r\"><div class=\"g\"></div></div>",
+              "tokens": {
+                "bg": "#0c0906",
+                "c1": "#1a1209",
+                "c2": "#5e3c10"
               }
             },
-            "animate": {
-              "opacity": [
-                {
-                  "time": 0,
-                  "value": 1
-                },
-                {
-                  "time": 29.1,
-                  "value": 1
-                },
-                {
-                  "time": 30,
-                  "value": 0,
-                  "easing": "easeIn"
+            "tweens": [
+              {
+                "id": "opacity",
+                "propertyGroup": "visual",
+                "position": 0,
+                "duration": 30,
+                "keyframes": {
+                  "format": "percentage",
+                  "easeEach": "none",
+                  "keyframes": [
+                    {
+                      "percentage": 0,
+                      "properties": {
+                        "opacity": 1
+                      },
+                      "ease": "none"
+                    },
+                    {
+                      "percentage": 97.00000000000001,
+                      "properties": {
+                        "opacity": 1
+                      },
+                      "ease": "none"
+                    },
+                    {
+                      "percentage": 100,
+                      "properties": {
+                        "opacity": 0
+                      },
+                      "ease": "custom(M0,0 C0.42,0 1,1 1,1)"
+                    }
+                  ]
                 }
-              ],
-              "position.x": [
-                {
-                  "time": 0,
-                  "value": 0.47
-                },
-                {
-                  "time": 30,
-                  "value": 0.53,
-                  "easing": "easeInOut"
+              },
+              {
+                "id": "scale",
+                "propertyGroup": "scale",
+                "position": 0,
+                "duration": 30,
+                "keyframes": {
+                  "format": "percentage",
+                  "easeEach": "none",
+                  "keyframes": [
+                    {
+                      "percentage": 0,
+                      "properties": {
+                        "scale": 1.12
+                      },
+                      "ease": "none"
+                    },
+                    {
+                      "percentage": 100,
+                      "properties": {
+                        "scale": 1
+                      },
+                      "ease": "custom(M0,0 C0.42,0 0.58,1 1,1)"
+                    }
+                  ]
                 }
-              ],
-              "scale": [
-                {
-                  "time": 0,
-                  "value": 1.12
-                },
-                {
-                  "time": 30,
-                  "value": 1,
-                  "easing": "easeInOut"
+              },
+              {
+                "id": "position.x",
+                "propertyGroup": "position",
+                "position": 0,
+                "duration": 30,
+                "keyframes": {
+                  "format": "percentage",
+                  "easeEach": "none",
+                  "keyframes": [
+                    {
+                      "percentage": 0,
+                      "properties": {
+                        "xPercent": -3.0000000000000027
+                      },
+                      "ease": "none"
+                    },
+                    {
+                      "percentage": 100,
+                      "properties": {
+                        "xPercent": 3.0000000000000027
+                      },
+                      "ease": "custom(M0,0 C0.42,0 0.58,1 1,1)"
+                    }
+                  ]
                 }
-              ]
-            }
+              }
+            ]
           }
         ]
       },

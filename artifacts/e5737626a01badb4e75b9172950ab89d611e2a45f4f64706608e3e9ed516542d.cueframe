@@ -1,0 +1,180 @@
+{
+  "v": 1,
+  "slug": "yosemite-warp-text",
+  "name": "Carved by water",
+  "description": "An oversized moving title meets the scale of Yosemite Falls.",
+  "composition": {
+    "v": 1,
+    "format": {
+      "aspectRatio": "16:9",
+      "fps": 30,
+      "resolution": "fhd"
+    },
+    "tracks": [
+      {
+        "id": "upper-falls-title",
+        "kind": "overlay",
+        "name": "CueFrame WarpText",
+        "contents": [
+          {
+            "id": "upper-falls-warp-title",
+            "kind": "overlay",
+            "startTime": 0,
+            "duration": 8,
+            "source": {
+              "kind": "card",
+              "html": "<style>.r{position:relative;width:1920px;height:1080px;overflow:hidden;font-family:'Bricolage Grotesque',Inter,sans-serif;--a:min(clamp(0,calc((var(--cf-progress) - .12) / .1),1),clamp(0,calc((1 - var(--cf-progress)) / .14),1));--d:min(clamp(0,calc((var(--cf-progress) - .24) / .1),1),clamp(0,calc((1 - var(--cf-progress)) / .14),1))}.t{position:absolute;right:130px;top:298px;margin:0;color:var(--cf-color);font-size:148px;font-weight:800;line-height:146px;text-align:right;white-space:pre-line;opacity:var(--a)}.k{position:absolute;left:1118px;top:650px;width:672px;opacity:var(--d)}.rule{height:3px;background:var(--cf-color)}.l1{margin-top:28px;color:#f7f1e6;font-size:29px;font-weight:600;letter-spacing:2px}.l2{margin-top:14px;color:#e8d6bf;font-size:22px;letter-spacing:1.7px}.tl{position:absolute;left:112px;top:84px;color:var(--cf-color);font-size:21px;font-weight:600;letter-spacing:5px;opacity:var(--d)}.tr{position:absolute;right:112px;top:84px;display:flex;align-items:center;gap:22px;color:var(--cf-color);opacity:var(--d)}.n{font-size:17px;font-weight:600;letter-spacing:3px}.dot{width:22px;height:22px;border-radius:999px;background:var(--cf-color)}.logo{position:absolute;left:112px;bottom:76px;display:flex;align-items:center;gap:22px;opacity:var(--d)}.word{color:#f7f1e6;font-size:29px;font-weight:650;letter-spacing:1.2px}</style><div class=\"r\"><div class=\"t\">{{text}}</div><div class=\"k\"><div class=\"rule\"></div><div class=\"l1\">ONE CANVAS &middot; HUMAN + AGENT</div><div class=\"l2\">BUILT IN CUEFRAME</div></div><div class=\"tl\">YOSEMITE // UPPER FALLS</div><div class=\"tr\"><span class=\"n\">01 / 06</span><span class=\"dot\"></span></div><div class=\"logo\"><svg width=\"70\" height=\"70\" viewBox=\"0 0 256 256\" aria-hidden=\"true\"><defs><clipPath id=\"cueframe-logo-clip\"><circle cx=\"128\" cy=\"128\" r=\"118\"/></clipPath></defs><circle cx=\"128\" cy=\"128\" r=\"118\" fill=\"#eba61f\"/><g clip-path=\"url(#cueframe-logo-clip)\" stroke=\"#0a0a0a\" fill=\"none\"><path d=\"M88 128Q160 40 300-40\" stroke-width=\"5\"/><path d=\"M88 128Q170 60 310 20\" stroke-width=\"4.5\"/><path d=\"M88 128Q180 80 316 70\" stroke-width=\"4.5\"/><path d=\"M88 128Q186 110 320 110\" stroke-width=\"4.5\"/><path d=\"M88 128Q186 146 320 146\" stroke-width=\"4.5\"/><path d=\"M88 128Q180 176 316 186\" stroke-width=\"4.5\"/><path d=\"M88 128Q170 196 310 236\" stroke-width=\"4.5\"/><path d=\"M88 128Q160 216 300 296\" stroke-width=\"5\"/></g><circle cx=\"88\" cy=\"128\" r=\"20\" fill=\"#0a0a0a\"/><circle cx=\"88\" cy=\"128\" r=\"8\" fill=\"#7ec8e3\"/></svg><span class=\"word\">CUEFRAME</span></div></div>",
+              "tokens": {
+                "color": "{{color}}"
+              },
+              "zPlane": "front"
+            }
+          }
+        ]
+      },
+      {
+        "id": "upper-falls-video",
+        "kind": "video",
+        "name": "Upper Falls — source",
+        "contents": [
+          {
+            "id": "upper-falls-main",
+            "kind": "video",
+            "startTime": 0,
+            "duration": 8,
+            "fit": "cover",
+            "source": {
+              "kind": "media",
+              "mediaId": "{{source}}",
+              "trim": {
+                "start": 4,
+                "end": 12
+              },
+              "muted": false,
+              "volumeDb": -3,
+              "fadeInMs": 350,
+              "fadeOutMs": 600,
+              "audioRole": "ambience"
+            }
+          }
+        ]
+      }
+    ]
+  },
+  "parameters": [
+    {
+      "name": "source",
+      "type": "media",
+      "kind": "video",
+      "required": true,
+      "label": "Waterfall footage",
+      "sample": {
+        "url": "https://cdn.cueframe.ai/templates/yosemite-warp-text/yosemite-upper-falls-sample.mp4",
+        "sha256": "adc93b5a139ec1a7d2ba6cbd8c2e5a0b58e7d7a6fb55ae8006ef9e7452b19d45",
+        "mimeType": "video/mp4",
+        "durationSec": 16.016
+      }
+    },
+    {
+      "name": "text",
+      "type": "string",
+      "required": true,
+      "default": "CARVED BY\nWATER",
+      "maxLength": 40,
+      "label": "Title"
+    },
+    {
+      "name": "color",
+      "type": "color",
+      "required": true,
+      "default": "#eba61f",
+      "label": "Title color"
+    }
+  ],
+  "components": {},
+  "brandKit": {
+    "kitId": "template",
+    "name": "Carved by water",
+    "description": "Warm editorial color and oversized amber typography.",
+    "colors": {
+      "primary": "#eba61f",
+      "secondary": "#f7f1e6",
+      "accent": "#eba61f",
+      "background": "#0a0a0a",
+      "text": "#f7f1e6"
+    },
+    "headingFont": {
+      "fontFamily": "Bricolage Grotesque",
+      "fontWeight": 650
+    },
+    "bodyFont": {
+      "fontFamily": "Inter",
+      "fontWeight": 500
+    }
+  },
+  "presets": {
+    "carved": {
+      "label": "Carved by water",
+      "values": {
+        "text": "CARVED BY\nWATER",
+        "color": "#eba61f"
+      },
+      "gallery": {
+        "poster": "https://cueframe.ai/showcase/yosemite-poster.jpg",
+        "render": "https://cueframe.ai/demo/yosemite-warp-text.mp4",
+        "description": "Amber over the falls, the published film."
+      }
+    },
+    "granite": {
+      "label": "Cut from granite",
+      "values": {
+        "text": "CUT FROM\nGRANITE",
+        "color": "#d9dde3"
+      },
+      "brandKit": {
+        "kitId": "template",
+        "name": "Cut from granite",
+        "description": "Cool granite greys and pale typography for stone and sky.",
+        "colors": {
+          "primary": "#d9dde3",
+          "secondary": "#2b2f36",
+          "accent": "#d9dde3",
+          "background": "#0b0d10",
+          "text": "#eef1f4"
+        },
+        "headingFont": {
+          "fontFamily": "Bricolage Grotesque",
+          "fontWeight": 650
+        },
+        "bodyFont": {
+          "fontFamily": "Inter",
+          "fontWeight": 500
+        }
+      },
+      "gallery": {
+        "description": "Pale stone greys over the same footage."
+      }
+    }
+  },
+  "rubric": "# Carved by water\n\nPreview 0.5, 2, 4 and 7.5 seconds. The title must read in full inside the frame at 2 and 4 seconds, warp without tearing, and be gone by the last frame while the footage keeps its cinematic grade and ambient sound throughout.",
+  "provenance": {
+    "label": "Yosemite Upper Falls, CueFrame archive footage; title shader ported from React Bits WarpText (MIT)",
+    "href": "https://github.com/DavidHDev/react-bits",
+    "notes": "The fragment shader is kept intact apart from uOpacity, so the component can enter and leave deterministically."
+  },
+  "gallery": {
+    "status": "published",
+    "category": "Motion design",
+    "format": "16:9",
+    "duration": "8 seconds",
+    "render": "https://cueframe.ai/demo/yosemite-warp-text.mp4",
+    "poster": "https://cueframe.ai/showcase/yosemite-poster.jpg",
+    "prompt": "Make an 8-second landscape film using waterfall footage. Use oversized amber typography reading “Carved by water”, a restrained cinematic grade, and natural ambient sound. Keep the title, footage, and sound independently editable. Use my footage if I supply it; otherwise help me find suitable licensed footage.",
+    "details": [
+      "Custom animated typography",
+      "Cinematic color",
+      "Ambient sound"
+    ],
+    "transcriptExcerpt": null
+  }
+}

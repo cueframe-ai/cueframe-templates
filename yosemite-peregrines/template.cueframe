@@ -88,23 +88,7 @@
                   }
                 ]
               }
-            },
-            "effects": [
-              {
-                "primitiveId": "color-grade",
-                "params": {
-                  "preset": "cinematic",
-                  "temperature": 3,
-                  "intensity": 0.48
-                }
-              },
-              {
-                "primitiveId": "vignette",
-                "params": {
-                  "intensity": 0.12
-                }
-              }
-            ]
+            }
           }
         ]
       }
