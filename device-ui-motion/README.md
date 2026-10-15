@@ -50,11 +50,11 @@ bounded cubic interpolation. The runtime owns depth of field and postprocessing.
 
 - Desktop: open `recipe.cueframe`, relink the required model slot, then preview.
   The project includes the component's immutable source version, not a baked video.
-- CLI: after checkout, run `cueframe recipe run ./device-ui-motion/recipe.cueframe
-  --media ./device.svg --no-render --json`. After publication the slug `device-ui-motion` resolves
-  the same top-level path. Use the project artifact, not directory mode: directory
-  mode does not install authored components. Recipe runs render by default; keep
-  `--no-render` while iterating and omit it only for final delivery.
+- CLI: the `recipe run` command went with the recipe format. The current CLI's
+  `cueframe template run <document> --media model=./device.svg --no-render --json`
+  takes a template document, which this draft gets back once the native port
+  exists (see the CHANGELOG). Runs render by default; keep `--no-render` while
+  iterating and omit it only for final delivery.
 - MCP: load the recipe, register the model in the target project, install the
   generated `index.tsx` with the manifest from `cueframe.json` and `schema.json` as
   `propSchema`, and bind the returned media ID to `source.assets.model` in the
