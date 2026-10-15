@@ -19,7 +19,7 @@ repository but not in the catalog.
 
 | Slug | What it is | Status |
 | --- | --- | --- |
-| [`yosemite-warp-text`](./yosemite-warp-text) | Oversized WebGL typography over waterfall footage; presets `carved` and `granite` | published |
+| [`yosemite-warp-text`](./yosemite-warp-text) | An oversized title card over waterfall footage; presets `carved` and `granite` | published |
 | [`yosemite-peregrines`](./yosemite-peregrines) | A ranger's talking-head beat with a behind-subject title and word-timed captions | published |
 | [`device-ui-motion`](./device-ui-motion) | A glass-UI showcase on a baked phone mesh | withdrawn until a native port (see CHANGELOG) |
 
@@ -40,7 +40,7 @@ each document; nothing binary is committed here.
   applies it; the server installs the components, so no source passes through
   the model.
 - **CLI:** `cueframe template run <slug> --media source=sample` (ships with the
-  next CLI release; until then the `recipe` commands read the older files).
+  next CLI release).
 
 ## Contributing
 
@@ -54,10 +54,12 @@ npm run catalog   # updates catalog and writes new immutable document copies
 npm run validate  # includes npm run check: what the HyperFrames-only kernel refuses
 ```
 
-## Until the cutover
+## Recipe-era files
 
-The older `recipe.cueframe`, `composition.template.json`, `recipes.json` and
-per-recipe builders stay beside the documents until every released reader has
-moved to templates; they are then deleted.
+The recipe builders, `composition.template.json`, `draft-recipes.json` and the
+recipe validator were deleted after the 2026-10-14 cutover. `recipes.json` and
+the two `recipe.cueframe` projects stay, frozen, because `cueframe.ai` still
+reads the manifest at build time and links the projects; no CueFrame surface
+reads them. They go once the landing site reads `templates.json`.
 
 Templates are licensed under [AGPL-3.0-only](./LICENSE).

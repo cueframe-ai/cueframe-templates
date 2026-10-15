@@ -3,13 +3,13 @@
   "templates": [
     {
       "slug": "yosemite-peregrines",
-      "documentSha256": "bd7b95be3166875aafc69f742e8f030818ef5ce21b9da74da3aa79df3a2f8815",
+      "documentSha256": "48de8831bf5f8bb2ff9ef167c389b1124fc40a08eac135704bb6579c624c566c",
       "title": "Yosemite Peregrines",
       "category": "Spoken stories",
       "format": "16:9",
       "duration": "10 seconds",
-      "render": "https://cueframe.ai/demo/yosemite-peregrines-phenomenal.mp4",
-      "poster": "https://cueframe.ai/showcase/yosemite-peregrines-phenomenal-poster.jpg",
+      "render": "https://cueframe.ai/demo/yosemite-peregrines-native.mp4",
+      "poster": "https://cueframe.ai/showcase/yosemite-peregrines-native-poster.jpg",
       "description": "A Yosemite ranger's awe lands with one restrained editorial title and word-timed captions.",
       "transcriptExcerpt": "It’s just phenomenal how unbelievably fast they are when they’re in that perfect tuck or stoop, as biologists call it, in the dive.",
       "details": [
@@ -19,7 +19,7 @@
       ],
       "prompt": "Turn a strong 10-second talking-head quote into a cinematic landscape edit. Keep the speaker and any source lower-third fully visible, place one restrained title behind the subject, add accurate word-timed captions above the bottom safe area, preserve the original voice, and use my brand kit for the logo and caption accents.",
       "template": "https://github.com/cueframe-ai/cueframe-templates/tree/main/yosemite-peregrines",
-      "projectTemplate": "https://raw.githubusercontent.com/cueframe-ai/cueframe-templates/main/artifacts/bd7b95be3166875aafc69f742e8f030818ef5ce21b9da74da3aa79df3a2f8815.cueframe",
+      "projectTemplate": "https://raw.githubusercontent.com/cueframe-ai/cueframe-templates/main/artifacts/48de8831bf5f8bb2ff9ef167c389b1124fc40a08eac135704bb6579c624c566c.cueframe",
       "original": {
         "label": "National Park Service: Peregrine Falcons in Yosemite",
         "href": "https://www.nps.gov/media/video/view.htm?id=53135a56-4998-4d6e-b26d-24fe0acca1c3"
@@ -37,26 +37,25 @@
     },
     {
       "slug": "yosemite-warp-text",
-      "documentSha256": "e5737626a01badb4e75b9172950ab89d611e2a45f4f64706608e3e9ed516542d",
+      "documentSha256": "77dcae96145c2c319a4db2b410e28daf69fd07ba8effc02dcabc7c8041226420",
       "title": "Carved by water",
       "category": "Motion design",
       "format": "16:9",
       "duration": "8 seconds",
-      "render": "https://cueframe.ai/demo/yosemite-warp-text.mp4",
-      "poster": "https://cueframe.ai/showcase/yosemite-poster.jpg",
-      "description": "An oversized moving title meets the scale of Yosemite Falls.",
+      "render": "https://cueframe.ai/demo/yosemite-warp-text-native.mp4",
+      "poster": "https://cueframe.ai/showcase/yosemite-warp-text-native-poster.jpg",
+      "description": "An oversized title fades up over the scale of Yosemite Falls.",
       "transcriptExcerpt": null,
       "details": [
-        "Custom animated typography",
-        "Cinematic color",
+        "Oversized title card",
+        "Editable title text and colour",
         "Ambient sound"
       ],
-      "prompt": "Make an 8-second landscape film using waterfall footage. Use oversized amber typography reading “Carved by water”, a restrained cinematic grade, and natural ambient sound. Keep the title, footage, and sound independently editable. Use my footage if I supply it; otherwise help me find suitable licensed footage.",
+      "prompt": "Make an 8-second landscape film using waterfall footage. Fade up oversized amber typography reading “Carved by water” over the footage, with natural ambient sound. Keep the title, footage, and sound independently editable. Use my footage if I supply it; otherwise help me find suitable licensed footage.",
       "template": "https://github.com/cueframe-ai/cueframe-templates/tree/main/yosemite-warp-text",
-      "projectTemplate": "https://raw.githubusercontent.com/cueframe-ai/cueframe-templates/main/artifacts/e5737626a01badb4e75b9172950ab89d611e2a45f4f64706608e3e9ed516542d.cueframe",
+      "projectTemplate": "https://raw.githubusercontent.com/cueframe-ai/cueframe-templates/main/artifacts/77dcae96145c2c319a4db2b410e28daf69fd07ba8effc02dcabc7c8041226420.cueframe",
       "original": {
-        "label": "Yosemite Upper Falls, CueFrame archive footage; title shader ported from React Bits WarpText (MIT)",
-        "href": "https://github.com/DavidHDev/react-bits"
+        "label": "Yosemite Upper Falls, CueFrame archive footage"
       },
       "parameters": [
         {
@@ -83,8 +82,8 @@
         {
           "name": "carved",
           "label": "Carved by water",
-          "poster": "https://cueframe.ai/showcase/yosemite-poster.jpg",
-          "render": "https://cueframe.ai/demo/yosemite-warp-text.mp4",
+          "poster": "https://cueframe.ai/showcase/yosemite-warp-text-native-poster.jpg",
+          "render": "https://cueframe.ai/demo/yosemite-warp-text-native.mp4",
           "description": "Amber over the falls, the published film."
         },
         {

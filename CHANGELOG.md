@@ -1,5 +1,32 @@
 # Changelog
 
+## 2026-10-14: gallery renders from the HyperFrames-only engine
+
+Both published templates were re-rendered on production (cutover build
+`fcaed5d75`, kernel 0.7.1) from `start_template` with `{ sample: true }` media,
+and the gallery `render` and `poster` now point at those films:
+
+| Template | Project / render | Hosted at |
+| --- | --- | --- |
+| `yosemite-peregrines` | `prj_c1e165601491444cbe481da832d1db19` / `q578j4e57c2z8eqa261hg2skz58gbxzw` | `cueframe.ai/demo/yosemite-peregrines-native.mp4`, `cueframe.ai/showcase/yosemite-peregrines-native-poster.jpg` |
+| `yosemite-warp-text` (`carved`) | `prj_779f78973d0845498580208751439670` / `q570mn6zkejvpqg2e05sntqx898gacxc` | `cueframe.ai/demo/yosemite-warp-text-native.mp4`, `cueframe.ai/showcase/yosemite-warp-text-native-poster.jpg` |
+
+The earlier films (with the grade and the warp) stay at their old URLs.
+`yosemite-warp-text`'s description, details, prompt, rubric and provenance no
+longer promise a grade or a shader warp; `yosemite-peregrines`'s rubric no
+longer names a grade. New document digests: `yosemite-peregrines`
+`48de8831bf5f8bb2ff9ef167c389b1124fc40a08eac135704bb6579c624c566c`, `yosemite-warp-text` `77dcae96145c2c319a4db2b410e28daf69fd07ba8effc02dcabc7c8041226420`.
+
+The recipe-era files that nothing reads any more are deleted: the recipe
+validator (`validate-recipes.mjs`, `tools/validate-recipes.mjs`),
+`draft-recipes.json`, and the per-template builders and their inputs
+(`build-project-template.mjs`, `composition.template.json`, `brand-kit.json`,
+`packed-matte.mp4.base64`, `rubric.md`, `cueframe.json` and the TSX WarpText
+source under `yosemite-warp-text/cueframe/`). `recipes.json` and both
+`recipe.cueframe` projects stay, frozen, because `cueframe.ai` fetches the
+manifest at build time and links the projects; `recipes.json` carries the new
+render and poster URLs so the landing site shows the same films.
+
 ## 2026-10-14: tools pinned to the published kernel 0.7.1
 
 `package.json` pins `@cueframe/kernel` 0.7.1 from npm (it was 0.2.64). The
@@ -29,5 +56,5 @@ New document digests: `yosemite-peregrines` `bd7b95be3166875aafc69f742e8f030818e
 `yosemite-warp-text` `e5737626a01badb4e75b9172950ab89d611e2a45f4f64706608e3e9ed516542d`.
 The earlier artifacts stay in `artifacts/` (immutable).
 
-The gallery renders and posters of both published templates show the earlier
-films (the grade and the warp) until they are re-rendered.
+The gallery renders and posters of both published templates showed the earlier
+films (the grade and the warp) until the 2026-10-14 re-render above.
