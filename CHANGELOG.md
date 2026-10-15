@@ -1,5 +1,17 @@
 # Changelog
 
+## 2026-10-14: the recipe files are gone
+
+`cueframe.ai` now reads `templates.json` (served at
+`api.cueframe.ai/catalog/templates.json`) and links the content-addressed
+documents under `artifacts/`, so the last recipe-era files are deleted:
+`recipes.json`, `yosemite-peregrines/recipe.cueframe` and
+`yosemite-warp-text/recipe.cueframe`. Nothing in the CueFrame services, the
+desktop app, the CLI (0.9.0 has no `recipe` command), the MCP server or the
+docs reads them; the frozen v4 projects remain in history. The withdrawn
+`device-ui-motion` draft keeps its `recipe.cueframe` beside its source. The
+catalog and the document digests are unchanged.
+
 ## 2026-10-14: gallery renders from the HyperFrames-only engine
 
 Both published templates were re-rendered on production (cutover build

@@ -31,6 +31,4 @@ archived Yosemite Upper Falls clip (the pinned sample).
 Until 2026-10-13 the title was a WebGL2 WarpText shader component (ported from
 React Bits, MIT) and the footage carried a colour grade. Neither executes on
 the HyperFrames-only kernel; the document now carries the native card and no
-grade (see the [CHANGELOG](../CHANGELOG.md)). The older `recipe.cueframe`
-beside this file is the frozen v4 recipe project that `cueframe.ai` still
-links; it is not read by any CueFrame surface.
+grade (see the [CHANGELOG](../CHANGELOG.md)).
