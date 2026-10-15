@@ -96,7 +96,6 @@ cd ..
 node device-ui-motion/build-project-template.mjs
 node device-ui-motion/build-project-template.mjs --check
 node --test device-ui-motion/tests/*.test.mjs
-node tools/validate-recipes.mjs
 ```
 
 The builder bundles owned source and leaves package imports external; the CLI
@@ -115,6 +114,6 @@ not a dependency or test command of this public recipe package.
 Inspect a scoped navbar preview using `shot: "navbar"` before rendering the full
 15.17-second film. Camera, screen, glass and icons must share the same device transform.
 See [rubric.md](./rubric.md) for the visual gate. A hosted demonstration video/poster
-has **not** been published for this unbranded package. It belongs in the repository's
-`draft-recipes.json` lifecycle list, not the public `recipes.json` catalog. Published landing
-entries require a real render and poster; no placeholder URL should be invented.
+has **not** been published for this unbranded package, and its document is withdrawn
+from `templates.json` until a native port exists (see the CHANGELOG). Published
+catalog entries require a real render and poster; no placeholder URL should be invented.

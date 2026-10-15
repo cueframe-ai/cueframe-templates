@@ -2,7 +2,7 @@
   "v": 1,
   "slug": "yosemite-warp-text",
   "name": "Carved by water",
-  "description": "An oversized moving title meets the scale of Yosemite Falls.",
+  "description": "An oversized title fades up over the scale of Yosemite Falls.",
   "composition": {
     "v": 1,
     "format": {
@@ -14,7 +14,7 @@
       {
         "id": "upper-falls-title",
         "kind": "overlay",
-        "name": "CueFrame WarpText",
+        "name": "CueFrame title",
         "contents": [
           {
             "id": "upper-falls-warp-title",
@@ -120,8 +120,8 @@
         "color": "#eba61f"
       },
       "gallery": {
-        "poster": "https://cueframe.ai/showcase/yosemite-poster.jpg",
-        "render": "https://cueframe.ai/demo/yosemite-warp-text.mp4",
+        "poster": "https://cueframe.ai/showcase/yosemite-warp-text-native-poster.jpg",
+        "render": "https://cueframe.ai/demo/yosemite-warp-text-native.mp4",
         "description": "Amber over the falls, the published film."
       }
     },
@@ -156,23 +156,22 @@
       }
     }
   },
-  "rubric": "# Carved by water\n\nPreview 0.5, 2, 4 and 7.5 seconds. The title must read in full inside the frame at 2 and 4 seconds, warp without tearing, and be gone by the last frame while the footage keeps its cinematic grade and ambient sound throughout.",
+  "rubric": "# Carved by water\n\nPreview 0.5, 2, 4 and 7.5 seconds. The title must read in full inside the frame at 2 and 4 seconds and be gone by the last frame while the footage keeps its ambient sound throughout.",
   "provenance": {
-    "label": "Yosemite Upper Falls, CueFrame archive footage; title shader ported from React Bits WarpText (MIT)",
-    "href": "https://github.com/DavidHDev/react-bits",
-    "notes": "The fragment shader is kept intact apart from uOpacity, so the component can enter and leave deterministically."
+    "label": "Yosemite Upper Falls, CueFrame archive footage",
+    "notes": "The title was a WebGL WarpText shader (ported from React Bits, MIT) until 2026-10-13; it is now a native card and the document carries no shader."
   },
   "gallery": {
     "status": "published",
     "category": "Motion design",
     "format": "16:9",
     "duration": "8 seconds",
-    "render": "https://cueframe.ai/demo/yosemite-warp-text.mp4",
-    "poster": "https://cueframe.ai/showcase/yosemite-poster.jpg",
-    "prompt": "Make an 8-second landscape film using waterfall footage. Use oversized amber typography reading “Carved by water”, a restrained cinematic grade, and natural ambient sound. Keep the title, footage, and sound independently editable. Use my footage if I supply it; otherwise help me find suitable licensed footage.",
+    "render": "https://cueframe.ai/demo/yosemite-warp-text-native.mp4",
+    "poster": "https://cueframe.ai/showcase/yosemite-warp-text-native-poster.jpg",
+    "prompt": "Make an 8-second landscape film using waterfall footage. Fade up oversized amber typography reading “Carved by water” over the footage, with natural ambient sound. Keep the title, footage, and sound independently editable. Use my footage if I supply it; otherwise help me find suitable licensed footage.",
     "details": [
-      "Custom animated typography",
-      "Cinematic color",
+      "Oversized title card",
+      "Editable title text and colour",
       "Ambient sound"
     ],
     "transcriptExcerpt": null

@@ -7,16 +7,16 @@
       "category": "Motion design",
       "format": "16:9",
       "duration": "8 seconds",
-      "render": "https://cueframe.ai/demo/yosemite-warp-text.mp4",
-      "poster": "https://cueframe.ai/showcase/yosemite-poster.jpg",
-      "description": "An oversized moving title meets the scale of Yosemite Falls.",
+      "render": "https://cueframe.ai/demo/yosemite-warp-text-native.mp4",
+      "poster": "https://cueframe.ai/showcase/yosemite-warp-text-native-poster.jpg",
+      "description": "An oversized title fades up over the scale of Yosemite Falls.",
       "transcriptExcerpt": null,
       "details": [
-        "Custom animated typography",
-        "Cinematic color",
+        "Oversized title card",
+        "Editable title text and colour",
         "Ambient sound"
       ],
-      "prompt": "Make an 8-second landscape film using waterfall footage. Use oversized amber typography reading “Carved by water”, a restrained cinematic grade, and natural ambient sound. Keep the title, footage, and sound independently editable. Use my footage if I supply it; otherwise help me find suitable licensed footage.",
+      "prompt": "Make an 8-second landscape film using waterfall footage. Fade up oversized amber typography reading “Carved by water” over the footage, with natural ambient sound. Keep the title, footage, and sound independently editable. Use my footage if I supply it; otherwise help me find suitable licensed footage.",
       "recipe": "https://github.com/cueframe-ai/cueframe-recipes/tree/main/yosemite-warp-text",
       "projectTemplate": "https://raw.githubusercontent.com/cueframe-ai/cueframe-recipes/main/yosemite-warp-text/recipe.cueframe"
     },
@@ -26,8 +26,8 @@
       "category": "Spoken stories",
       "format": "16:9",
       "duration": "10 seconds",
-      "render": "https://cueframe.ai/demo/yosemite-peregrines-phenomenal.mp4",
-      "poster": "https://cueframe.ai/showcase/yosemite-peregrines-phenomenal-poster.jpg",
+      "render": "https://cueframe.ai/demo/yosemite-peregrines-native.mp4",
+      "poster": "https://cueframe.ai/showcase/yosemite-peregrines-native-poster.jpg",
       "description": "A Yosemite ranger's awe lands with one restrained editorial title and word-timed captions.",
       "transcriptExcerpt": "It’s just phenomenal how unbelievably fast they are when they’re in that perfect tuck or stoop, as biologists call it, in the dive.",
       "details": [

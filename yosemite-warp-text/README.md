@@ -1,60 +1,36 @@
-> **Template:** [`template.cueframe`](./template.cueframe) is the one document
-> every CueFrame surface reads. Parameters: `source` (video, sample on cdn),
-> `text`, `color`. Presets: `carved` (amber, the published film) and `granite`
-> (pale stone greys with its own kit). The sections below describe the older
-> recipe files, kept until the cutover.
+# Carved by water
 
-# Yosemite WarpText sample
+[`template.cueframe`](./template.cueframe) is the one document every CueFrame
+surface reads: an 8-second landscape film in which an oversized title fades up
+over Yosemite Upper Falls with the footage's own ambient sound.
 
-This is the editable workspace behind the
-[Yosemite WarpText demo](https://cueframe.ai/demo/yosemite-warp-text.mp4). It
-contains the authored WebGL component and the composition recipe; the linked
-MP4 is the rendered result.
+[Watch the published render](https://cueframe.ai/demo/yosemite-warp-text-native.mp4).
 
-The sample demonstrates the same project model used by every CueFrame surface:
-
-- a human can inspect and adjust the tracks, grade, trim, audio, and component;
-- an agent can push the component and write the composition through the CLI,
-  MCP, or REST API;
-- the render is produced from that shared composition, not from a separate
-  marketing mock.
+- Parameters: `source` (video; the sample is pinned on `cdn.cueframe.ai`),
+  `text` (the title, up to 40 characters, line breaks kept) and `color` (the
+  title colour).
+- Presets: `carved` (amber, the published film) and `granite` (pale stone
+  greys with its own brand kit).
+- The title is a native `card` clip: its typography, detail lines and logo are
+  editable HTML, and the title and footage stay independent tracks.
 
 ## Reproduce it
 
-Use footage you have permission to edit. The published demo uses CueFrame's
-archived `Yosemite_Upper_Falls___8K_source.webm`: a 21.828-second, 7680×4320
-VP9 source with stereo Opus audio. The earlier link to the National Park
-Service's 2021 Yosemite stock-footage master was incorrect; that master is a
-different video and is not the source of this render.
+- **Desktop app:** Projects → From template → `yosemite-warp-text`, keep the
+  sample or choose your own footage, pick a preset, Create.
+- **API:** `POST /v1/templates/yosemite-warp-text/apply { projectId, media: { source: { sample: true } }, preset: "carved" }`,
+  then `POST /v1/projects/<id>/renders`.
+- **Agents:** `start_template` with `media: { source: { sample: true } }` and
+  `preset: "carved"`, `wait_job(kind: "template")`, then `create_render`.
 
-Every surface starts from the same portable [`recipe.cueframe`](./recipe.cueframe)
-project in this repository.
+Use footage you have permission to edit. The published render uses CueFrame's
+archived Yosemite Upper Falls clip (the pinned sample).
 
-### CLI
+## History
 
-```bash
-npx -y cueframe recipe run yosemite-warp-text \
-  --media ./yosemite-upper-falls.mp4 \
-  --out ./yosemite-warp-text.mp4
-```
-
-The command resolves the canonical recipe, installs its authored component,
-uploads and binds your source, validates the composition, and renders it. Add
-`--no-render` when you only want the editable cloud project.
-
-### Desktop app
-
-Download and open [`recipe.cueframe`](./recipe.cueframe). CueFrame asks you to
-locate the missing source footage and opens the complete editable timeline,
-including the authored WarpText component.
-
-### MCP
-
-Ask your CueFrame-connected agent to apply `yosemite-warp-text` from
-`cueframe-ai/cueframe-recipes` to your source. The agent resolves the same
-project artifact and uses CueFrame's media, component, project, validation,
-preview, and render tools. It does not reconstruct the edit from prose.
-
-The component uses WebGL2. CueFrame bakes it to an alpha layer before the final
-composition render, so the output is deterministic and does not depend on a
-browser preview cache.
+Until 2026-10-13 the title was a WebGL2 WarpText shader component (ported from
+React Bits, MIT) and the footage carried a colour grade. Neither executes on
+the HyperFrames-only kernel; the document now carries the native card and no
+grade (see the [CHANGELOG](../CHANGELOG.md)). The older `recipe.cueframe`
+beside this file is the frozen v4 recipe project that `cueframe.ai` still
+links; it is not read by any CueFrame surface.
