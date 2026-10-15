@@ -38,9 +38,7 @@ the publisher's current reuse guidance for your intended distribution. This
 repository distributes the template and links to the finished render; it does
 not distribute the source master.
 
-The older `recipe.cueframe` beside this file is the frozen v4 recipe project
-that `cueframe.ai` still links; no CueFrame surface reads it. The colour grade
-and vignette of the earlier film were retired with the HyperFrames-only kernel
-(see the [CHANGELOG](../CHANGELOG.md)).
+The colour grade and vignette of the earlier film were retired with the
+HyperFrames-only kernel (see the [CHANGELOG](../CHANGELOG.md)).
 
 [source]: https://www.nps.gov/media/video/view.htm?id=53135a56-4998-4d6e-b26d-24fe0acca1c3

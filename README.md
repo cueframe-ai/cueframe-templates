@@ -56,10 +56,11 @@ npm run validate  # includes npm run check: what the HyperFrames-only kernel ref
 
 ## Recipe-era files
 
-The recipe builders, `composition.template.json`, `draft-recipes.json` and the
-recipe validator were deleted after the 2026-10-14 cutover. `recipes.json` and
-the two `recipe.cueframe` projects stay, frozen, because `cueframe.ai` still
-reads the manifest at build time and links the projects; no CueFrame surface
-reads them. They go once the landing site reads `templates.json`.
+The recipe format that preceded template documents is gone: the builders,
+`composition.template.json`, `draft-recipes.json`, the recipe validator,
+`recipes.json` and the per-template `recipe.cueframe` projects were deleted
+after the 2026-10-14 cutover, once `cueframe.ai` read `templates.json`. The
+frozen projects remain in history. The withdrawn `device-ui-motion` draft keeps
+its own `recipe.cueframe` beside its source until a native port exists.
 
 Templates are licensed under [AGPL-3.0-only](./LICENSE).
